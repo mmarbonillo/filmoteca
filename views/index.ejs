@@ -1,0 +1,115 @@
+<html lang="es">
+  <head>
+    <link rel="stylesheet" href="/css/frontend.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <div class="centerH">
+        <div id="content" class="col70 bblack">
+<!--------------------------------- CABECERA ------------------------------>
+            <div id="header" class="col100 bred"></div>
+<!--------------------------------- CUERPO -------------------------------->
+            <div id="body" class="col100">
+    <!--------------------------------- MENÚ ---------------------------------->
+                <div id="menu" class="col20">
+                    <div id="menuPeliculas" class="col100 sMarginTop">
+                        <div id="menuPeliculasCapa1" class="col100">
+                            <div class="col10 mMarginLeft sMarginTop">
+                                <img src="/img/17343587831556273568.svg" alt="">
+                            </div>
+                            <p class="menuElement col80 xsMarginTop" onclick="contenidoPeliculas()">Películas</p>
+                        </div>
+                        <div id="menuPeliculasCapa2" class="col100">
+
+                        </div>
+                    </div>
+                    <div id="menuSeries" class="col100">
+                        <p class="menuElement">Series</p>
+                    </div>
+                </div>
+    <!--------------------------------- CONTENIDO ----------------------------->
+                <div id="content" class="col70">
+                    <!-- <ul>
+                        <% peliculas.forEach(function(peliculas) { %>
+                            <li>
+                                <strong><%= peliculas.titulo %></strong>
+                                representing <%= peliculas.valoracion %>, born <%= peliculas.etiquetas[0] %>
+                            </li>
+                        <% }); %>
+                    </ul>-->
+                    <div id="btnNewform" class="col8 right mMarginTop">
+                        <button class="btn-success round col100 centerVH">
+                            <svg class="col70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.021 25.021">
+                                <polygon points="25.021,16.159 16.34,16.159 16.34,25.021 8.787,25.021 8.787,16.159 0,16.159 0,8.605 
+                                        8.787,8.605 8.787,0 16.34,0 16.34,8.605 25.021,8.605" fill="#fff"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="allForms" class="col100">
+                        <form class="col30">
+                            <label for="titulo" class="col100 mMarginTop">Título</label>
+                            <input type="text" name="titulo" id="newClientetitulo" class="col90 mMarginLeft" required><br><br>
+    
+                            <label for="anyo" class="col100 mMarginTop">Año</label>
+                            <input type="number" name="anyo" id="newClienteanyo" class="col90 mMarginLeft" required><br><br>
+    
+                            <label for="valoracion" class="col100 mMarginTop">Valoración</label>
+                            <input type="number" name="valoracion" id="valoracion" class="col90 mMarginLeft" required><br><br>
+    
+                            <label for="etiquetas" class="col100 mMarginTop">Etiquetas</label>
+                            <input type="text" name="etiquetas" id="etiquetas" class="col90 mMarginLeft" required><br><br>
+    
+                            <label for="descripcion" class="col100 mMarginTop">Descripción</label>
+                            <textarea class="col90 mMarginLeft" name="descripcion" cols="30" rows="2"></textarea><br><br>
+                        </form>
+                    </div>
+                    <div class="col100">
+                        <button onclick="addPelicula()" class="clear">Enviar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+    </div>
+
+    
+  </body>
+  <style>
+      .menuElement:hover {
+        cursor: pointer;
+      }
+    button.round {
+        height: 55px;
+        width: 55px;
+        border-radius: 50px;
+    }
+  </style>
+  <script>
+      function addPelicula(){
+        $.ajax({
+        url: '/api/peliculas',
+        type: 'POST',
+        data: {
+            //"_token": token,
+            "titulo": $("#titulo").val(),
+            "anyo": $("#anyo").val(),
+            "valoracion": $("#valoracion").val(),
+            "etiquetas": $("#etiquetas").val(),
+            "descripcion": $("#descripcion").val()
+        },
+        success:function(result){
+            if(result["status"]){
+                alert("Película añadida");
+            }
+        }
+    });
+      }
+  </script>
+</html>
