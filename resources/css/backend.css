@@ -1,0 +1,812 @@
+/*---------------------------------------------------------------
+| Estilos especificos del sitio para cada uno de los elementos  |
+| de la sección de backend.                                     |
+---------------------------------------------------------------*/
+
+/* GENERAL */
+body{
+	position: absolute;
+    float: left;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+div, td, span{	
+	/* Limitar tamanno */
+	box-sizing:border-box; 
+	-moz-box-sizing:border-box; /* Firefox */ 
+	-webkit-box-sizing:border-box; /* Safari */
+}
+
+/* BARRA DE SCROLL */
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	display:none;
+}
+::-webkit-scrollbar-thumb {
+	background: #b4b4b4; 
+	border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #000000; 
+}
+
+/* MENSAJES DE ERROR */
+.error {
+	width: 100%;
+	border: 2px solid red;
+	border-radius: 5px;
+	color: red;
+	background: rgba(255, 0, 0, 0.2);
+	margin-top: 1em; 
+	padding: 1em 0.5em;
+	display: none;
+	
+}
+.error span {
+	display: block;
+	padding: 0.2em;
+}
+
+/* BOTONES */
+button:focus {outline:0;}
+button:hover, input[type=submit]:hover, input[type=button]:hover {
+	transform: scale(0.9);
+}
+
+button, input[type=submit], input[type=button]{
+	background-color: #8500FF;
+	border-radius: 50px;
+	border:none;
+	padding: 8px 18px;
+	color:white;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+input[type=submit]:hover{
+	cursor: pointer;
+}
+button.second{
+	background-color: #B8B8B8;
+}
+button.delete, input[type=button].delete{
+	background-color: rgb(255, 87, 87);
+	cursor: pointer;
+}
+button.round{
+	height: 55px;
+    width: 55px;
+}
+button.round svg{
+	fill:white;
+}
+.bBlack{
+	background-color: #363636!important;
+}
+
+/* Boton volver */
+.btnBack{
+	width: 30px;
+	background-color: #8500FF;
+	border-radius: 5px;
+	padding: 0px 5px;
+	cursor: pointer;
+	fill: white;
+	transition: all 0.2s linear;
+}
+	.btnBack:hover {
+		transform: scale(0.9);
+	}
+
+/* FORMULARIO */
+input:focus, textarea:focus, select, audio {outline:0;}
+input[type=text], input[type=number], input[type=password], input[type=email] {
+	border-radius: 50px;
+    border: 1px solid gray;
+    padding: 7px 13px;
+}
+input[type=date]{
+	border-radius: 50px;
+    border: 1px solid gray;
+    padding: 5px 13px;
+}
+select{
+	border-radius: 50px;
+    border: 1px solid gray;
+    padding: 7px 13px;
+}
+textarea {
+	border-radius: 5px;
+    border: 1px solid gray;
+	padding: 7px 13px;
+	font-family: 'Raleway', sans-serif;
+}
+label{
+	padding: 4px 0px;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgb(104, 104, 104);
+}
+.req{
+	font-weight: bold;
+	color:red;
+	margin-left:3px;
+}
+
+#msmError, .msmError{
+	font-size: 14px;
+	color: red;
+	padding-left: 15px;
+}
+
+textarea {
+	resize: none;
+}
+
+
+/* TITULO */
+#title span{
+	font-size: 30px;
+    font-weight: bold
+}
+
+/* VENTANA MODAL */
+#modalWindow {
+	display: none;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.753);
+	width: 100%;
+	height: 100%;
+	z-index: 60;
+}
+#modalWindow #containerModal{
+	width: 100%;
+	height: 100%;
+	/* Centrado vertical y horizontal */
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+#modalWindow .window{
+	position: relative;
+	background-color: white;
+	width: 50%;
+	border-radius: 15px;
+	/*Limitar tamaño respecto a padding*/
+	padding: 35px 50px;
+	overflow: auto;
+}
+#modalWindow .sizeWindow70{
+	width: 70%!important;
+}
+
+#modalWindow .sizeWindow40{
+	width: 40%!important;
+}
+
+.titleModal{
+	font-size: 23px;
+	font-weight: bold;
+	color:black;
+}
+.closeModal{
+	position: absolute;
+	top:20px;
+	right: 20px;
+	background: none;
+    padding: 0;
+}
+.closeModal svg{
+	width: 15px;
+}
+
+
+/*---------------------------------------------------------*/
+
+/* MENU DE NAVEGACION */
+nav{
+	position:fixed;
+	/*Sombra*/
+	-webkit-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.09);
+	-moz-box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.09);
+	box-shadow: 0px 0px 9px 3px rgba(0,0,0,0.09);	
+}
+nav .logo{
+	margin: 35px 0px 20% 0px;
+	text-align: center;
+}
+nav .menu ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding: 0px 10%;
+	font-weight: 700;
+	font-size: 14px;
+}
+nav .menu li{
+	margin: 12px 0px;
+	/*Centrar*/
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+    display: flex;
+	align-items: center;
+	transition: all 0.1s linear;
+}
+nav .menu li:hover {
+	transform: scale(1.1);
+}
+nav .menu svg{
+	width: 24px;
+	margin: 0px 8px 0px 20px;
+}
+nav .menu .line{
+	height: 2px;
+	background-color: #ebebeb;
+}
+nav .menu a{
+	text-decoration:none;
+	color:black;
+	transition: all 0.2s linear;
+}
+
+nav .logout{
+	position: absolute;
+	bottom: 0;
+}
+nav .logout button{
+	background-color: #cacaca;
+}
+
+#checkOption{
+	color: #8500FF;
+	fill: #8500FF;
+}
+
+/*---------------------------------------------------------*/
+
+/* CONTENIDO PRINCIPAL */
+main{
+	margin-left: 16%;
+}
+#contentMain{	box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;
+	padding: 40px 40px 90px 40px;
+}
+
+/*---------------------------------------------------------*/
+
+/* PIE DE PÁGINA */
+footer{
+	/*Pegar barra a la parte inferior*/
+	position: absolute;
+    bottom: 0;
+	
+	padding:15px 0px;
+	height:20px;
+	margin-top:25px;
+	background-color: #363636;
+	color: #fff;
+}
+
+/*---------------------------------------------------------*/
+/* BACKEND ZONAS                                           */
+/*---------------------------------------------------------*/
+#addScene{
+	cursor: cell;
+}
+#separatorLine{
+	background-color: #e2e2e2;
+	height: 2px;
+}
+
+#subTitleZone{
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+#menuModalUpdateScene label, #menuModalAddScene label, 
+#changeName label{
+	padding: 0px;
+}
+
+#menuModalUpdateScene input[type=checkbox], #menuModalAddScene input[type=checkbox]{
+	margin: 0px!important;
+}
+.titlePreviewSS{
+	background-color: black;
+	color: white;
+	font-weight: 700;
+	padding: 5px 15px 2px 15px;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.datePreviewSS{
+	background-color: black;
+	color: white;
+	padding: 0px 15px 5px 15px;
+}
+
+.previewSS #pano{
+	height: 100%!important;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.previewSS{
+	
+}
+
+
+/*---------------------------------------------------------*/
+/* ESTILO BACKEND RECURSOS                                 */
+/*---------------------------------------------------------*/
+
+form.dropzone {
+	/*Centrado vertical y horizontal*/
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+.resourcesIndex form{
+	border-radius: 15px;
+	border: 2px dashed rgba(0, 0, 0, 0.3);
+}
+.dz-message{
+	color: #7a7a7a;
+}
+.resourcesIndex .dropzoneContainer{	
+	padding: 10px;
+}
+.elementResource{	
+	padding: 10px;
+	cursor:pointer;
+}
+.elementResource .insideElement{
+	position: relative; 
+	width: 100%; 
+	padding-top: 100%; /* 1:1 Aspect Ratio */ 
+	border-radius: 15px;
+	overflow: hidden;
+}
+.elementResource .preview img{
+	position: absolute;
+	top:0;
+	height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.elementResource .titleResource{
+	height: 38px;
+	
+	color: white;
+	padding: 10px 0px 10px 10px;
+	background-color: black;
+	position: absolute;
+	bottom:0;
+}
+.elementResource .nameResource{
+	/* Agregar puntos suspensivos en nombres largos*/
+	overflow:hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.elementResource svg{
+	height: 100%;
+	float: right;
+	fill:white;
+	margin-right: 10px;
+}
+.addVideoContent{
+	/*Centrado vertical y horizontal*/
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: flex;
+  	justify-content: center;
+}
+.resourceContent textarea{
+	height: 200px;
+	max-height: 300px;
+	resize: vertical; 
+}
+.imageResource{
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	max-height: 58%;
+}
+.imageResource img{
+	object-fit: contain;
+	max-width: 100%;
+}
+.videoResource {
+	/*Mantener la relacion de aspecto de videos*/
+	position: relative;
+	padding-bottom: 51%; 
+	height: 0;
+}
+.videoResource iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.audioResource{
+	/* Centrado vertical y horizontal */
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	height: 300px;
+}
+.audioResource audio{
+	width: 500px;
+}
+.smallText{
+	height: 80px!important;
+}
+/* SUBTITULOS PARA AUDIOS */
+.elementSubt .textSubt, .notSubs{
+	font-size: 14px;
+}
+
+.elementSubt svg{
+	width: 14px;
+	cursor: pointer;
+	margin-right: 3px;
+}
+
+.elementSubt{
+	padding: 4px 0px 4px 13px;
+}
+
+#subsAsociated{
+	max-height: 80px;
+	overflow: scroll;
+}
+
+.subDel{
+	text-decoration:line-through;
+	color:red;
+}
+
+#fileSubtOwn svg{
+	width: 14px;
+	fill:gray;
+	transform: translateX(-100%);
+}
+#fileSubtOwn{
+	cursor: pointer;
+	
+	border-radius: 50px;
+    padding: 7px;
+    border: 2px solid gray;
+}
+#fileSubtOwn span{
+	color: gray;
+	font-size: 14px;
+}
+
+#fileSubtOwn:hover{
+	background-color: gray;
+}
+#fileSubtOwn:hover span{
+	color: white;
+}
+#fileSubtOwn:hover svg{
+	fill: white;
+}
+
+/*---------------------------------------------------------*/
+/* ESTILO BACKEND BACKUP                                   */
+/*---------------------------------------------------------*/
+.optionBackup{
+	background-color: #6e00ff;
+	position: relative;
+	border-radius: 30px;
+	/*Transicion*/
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.optionBackup:hover{
+	cursor: pointer;
+	background-color: white;
+	border: solid 5px #6e00ff;
+}
+.optionBackup:hover svg, .optionBackup:hover span{
+	fill: #6e00ff;
+	color: #6e00ff;
+}
+.optionBackup:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+#upBackup, #downBackup {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 30px;
+}
+.optionBackup span{
+	width: calc(100% - 60px);
+    position: absolute;
+    bottom: 0;
+	margin-bottom: 30px;	
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	color:white;
+}
+.optionBackup svg{
+	position: absolute;
+	top:15%;
+	width: 50%;
+	left: 27%;
+	fill:white;
+	/*Transicion*/
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+/*---------------------------------------------------------*/
+/* ESTILO BACKEND VISITAS GUIADAS                          */
+/*---------------------------------------------------------*/
+.ui-sortable-handle{
+	cursor: move;
+}
+
+/*---------------------------------------------------------*/
+/* ESTILO BACKEND ESCENAS                                  */
+/*---------------------------------------------------------*/
+
+#returnZone{
+	bottom: 0;
+}
+
+#mainScene{
+	margin-left: 0%;
+}
+#titleScene{
+	position: relative;
+	background-color: transparent;
+    border: none;
+    font-family: raleway;
+    font-weight: bold;
+    font-size: 23px;
+    margin-left: 30px;
+    margin-top: 10px;
+	color: white;
+	width: 50%;
+}
+
+#menuScenes{
+	position: relative;
+	background-color: white;
+	color: black;
+	padding: 0 25px;
+	
+}
+#setViewDefault{
+	position: fixed;
+	bottom:10px;
+	left:20px;
+}
+.cursorAddHotspot{
+	cursor :cell!important;
+}
+#editHotspot{
+	position: relative;
+}
+#editHotspot .title, #typesHotspot .title{
+	position: relative;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #6e00ff;
+    left: -25px;
+    color: white;
+    width: calc(100% + 50px);
+    float: left;
+    margin-bottom: 20px;
+}
+
+.ActionEditButtons{
+	position: absolute;
+	bottom: 0;
+}
+
+/* Panel listado de recursos genericos */
+#resourcesList .content{
+	overflow-y: scroll;
+	height: 60%;
+	float: left;
+	width: calc(100% + 10px);
+}
+#resourcesList .load{
+	height: 60%;
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+#resourcesList #loadIcon{
+	width: 30px;
+	animation: spinning 2s linear infinite;
+	transform-origin: 15px 13px;
+}
+
+@keyframes spinning {
+	from {transform: rotate(0deg);}
+	to { transform: rotate(360deg);}
+}
+
+/* Hotspot texto */
+#editHotspot textarea{
+	height: 160px;
+}
+
+/* Hotspot video */
+.previewVideo{
+	padding: 10px 35px;	
+}
+.previewVideo img:hover{
+	cursor: pointer;
+}
+.previewVideo img{
+	border-radius: 15px;
+	background-color: #6e00ff;
+}
+.videoSelected{
+	border: 5px solid #6e00ff;
+}
+.previewVideo span{
+	margin-top: 4px;
+    margin-left: 10px;
+}
+
+/* Hotspot audio */
+.previewAudio{
+	padding: 10px 35px;	
+}
+.previewAudio img:hover{
+	cursor: pointer;
+}
+.previewAudio img{
+	border-radius: 15px;
+}
+.audioSelected{
+	border: 5px solid #6e00ff;
+}
+.previewAudio span{
+	margin-top: 4px;
+    margin-left: 10px;
+}
+
+/* Hotspot de tipo salto */
+#destinationSceneView #pano{
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+#setViewDefaultDestinationScene{
+	border-top-right-radius: 0px!important;
+	border-top-left-radius: 0px!important;
+	border-bottom-right-radius: 15px!important;
+	border-bottom-left-radius: 15px!important;
+}
+
+/* Hotspot de tipo traslador */
+#portkeyHotspot, #imageGalleryHotspot{
+	max-height: 60%;
+	overflow: auto;
+}
+
+/* Modal confirmacion eliminado */
+.deleteText{
+	color:black;
+	text-align: center;
+}
+
+/* ICONO DE CARGA */
+#loadUploadScene svg, #loadUploadSceneUpdate svg{
+	margin:auto;
+	width: 25%;
+}
+
+.previewPortkey{
+	border-radius: 15px;
+	height: 340px; 
+	position: relative;
+}
+
+/* VISITAS GUIADAS */
+#audioDescrip{
+	clear: both; 
+	overflow:auto;
+	max-height: 50%;
+}
+
+/* TOOLTIP RECURSOS*/
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+  
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: calc(100% - 30px);
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 5px;
+	position: absolute;
+	z-index: 1000;
+	/* bottom: 69%; */
+	/* left: 50%; */
+	margin-left: 5px;
+	/* opacity: 0; */
+	bottom: 57px;
+	transition: opacity 0.3s;
+	font-size: 13px;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* INSTALADOR */
+#installForm label, #installForm .radioGroup{
+	text-align: left;
+}
+
+#installForm label{
+	font-size: 13px;
+}
+
+.groupInstall{
+	border-radius: 20px;
+	background-color: #f8f8f8;
+}
+
+.subtitleInstall{
+	font-size: 18px;
+    color: #8500ff;
+	font-weight: 700;
+	text-align: left;
+}
+
+.descriptionInstall{
+	margin-top:5px;
+	font-size: 13px;
+	color:rgb(153, 153, 153);
+	text-align: left;
+}
+
+.text-muted {
+	color: #6c757d !important;
+}

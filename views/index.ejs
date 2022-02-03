@@ -36,42 +36,38 @@
                 </div>
     <!--------------------------------- CONTENIDO ----------------------------->
                 <div id="content" class="col70">
-                    <!-- <ul>
+                    <div id="barraOpciones"></div>
+                    <div id="peliculas" class="col100 mMarginTop">
                         <% peliculas.forEach(function(peliculas) { %>
-                            <li>
-                                <strong><%= peliculas.titulo %></strong>
-                                representing <%= peliculas.valoracion %>, born <%= peliculas.etiquetas[0] %>
-                            </li>
+                            <div id="<%= peliculas._id %>" class="unaPelicula col30 mMarginRight" onclick="$(location).attr('href','/api/peliculas/<%= peliculas._id %>');">
+                                <div class="col100 fondoPelicula">
+                                    <div class="valoracionPelicula" class="col100">
+                                        <% for(var i = 1; i <= 5; i++) { %>
+                                            <% if(i <= peliculas.valoracion ) { %>
+                                                <img src="/img/estrellaAmarilla.svg" alt="" class="col10 sMarginRight">
+                                            <% } else{ %>
+                                                <img src="/img/estrellaBlanca.svg" alt="" class="col10 sMarginRight">
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                    <div class="imgPelicula col100">
+                                        <img src="/img/peliculas/<%= peliculas.imagen %>" alt="" class=" jpgPelicula col100">
+                                    </div>
+                                    
+                                </div>
+                                <div class="infoPelicula">
+                                    <p><%= peliculas.titulo %></p>
+                                </div>
+                            </div>
                         <% }); %>
-                    </ul>-->
+                    </div>
                     <div id="btnNewform" class="col8 right mMarginTop">
-                        <button class="btn-success round col100 centerVH">
+                        <button class="btn-success round col100 centerVH" onclick="addForm()">
                             <svg class="col70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.021 25.021">
                                 <polygon points="25.021,16.159 16.34,16.159 16.34,25.021 8.787,25.021 8.787,16.159 0,16.159 0,8.605 
                                         8.787,8.605 8.787,0 16.34,0 16.34,8.605 25.021,8.605" fill="#fff"></polygon>
                             </svg>
                         </button>
-                    </div>
-                    <div id="allForms" class="col100">
-                        <form class="col30">
-                            <label for="titulo" class="col100 mMarginTop">Título</label>
-                            <input type="text" name="titulo" id="newClientetitulo" class="col90 mMarginLeft" required><br><br>
-    
-                            <label for="anyo" class="col100 mMarginTop">Año</label>
-                            <input type="number" name="anyo" id="newClienteanyo" class="col90 mMarginLeft" required><br><br>
-    
-                            <label for="valoracion" class="col100 mMarginTop">Valoración</label>
-                            <input type="number" name="valoracion" id="valoracion" class="col90 mMarginLeft" required><br><br>
-    
-                            <label for="etiquetas" class="col100 mMarginTop">Etiquetas</label>
-                            <input type="text" name="etiquetas" id="etiquetas" class="col90 mMarginLeft" required><br><br>
-    
-                            <label for="descripcion" class="col100 mMarginTop">Descripción</label>
-                            <textarea class="col90 mMarginLeft" name="descripcion" cols="30" rows="2"></textarea><br><br>
-                        </form>
-                    </div>
-                    <div class="col100">
-                        <button onclick="addPelicula()" class="clear">Enviar</button>
                     </div>
                 </div>
             </div>
@@ -82,34 +78,77 @@
     
   </body>
   <style>
-      .menuElement:hover {
+    .jpgPelicula:hover {
+        -webkit-transform: scale(1.03); 
+        -moz-transform: scale(1.03);
+        -o-transform: scale(1.03);
+        transform: scale(1.03);
+        overflow: hidden;
         cursor: pointer;
-      }
+    }
+    .menuElement:hover {
+    cursor: pointer;
+    }
     button.round {
         height: 55px;
         width: 55px;
         border-radius: 50px;
     }
+    #allForms {
+        margin-top: -7%;
+    }
+    .valoracionPelicula {
+        position: relative;
+    }
+    .imgPelicula {
+        height: 23.5%;
+    }
+    .jpgPelicula{
+        height: 98%;
+    }
+    
   </style>
-  <script>
-      function addPelicula(){
-        $.ajax({
-        url: '/api/peliculas',
-        type: 'POST',
-        data: {
-            //"_token": token,
-            "titulo": $("#titulo").val(),
-            "anyo": $("#anyo").val(),
-            "valoracion": $("#valoracion").val(),
-            "etiquetas": $("#etiquetas").val(),
-            "descripcion": $("#descripcion").val()
-        },
-        success:function(result){
-            if(result["status"]){
-                alert("Película añadida");
+    <script>
+
+        console.log(peliculas[0]);
+        function addPelicula(){
+            $.ajax({
+            url: '/api/peliculas',
+            type: 'POST',
+            data: {
+                //"_token": token,
+                "titulo": $("#titulo").val(),
+                "anyo": $("#anyo").val(),
+                "valoracion": $("#valoracion").val(),
+                "etiquetas": $("#etiquetas").val(),
+                "descripcion": $("#descripcion").val()
+            },
+            success:function(result){
+                if(result["status"]){
+                    alert("Película añadida");
+                }
             }
+            });
         }
-    });
-      }
+
+    function addForm(){
+        var elemento = `<form class='col30'> 
+                          <label for='titulo' class='col100 mMarginTop'>Título</label> 
+                          <input type='text' name='titulo' id='newClientetitulo' class='col90 mMarginLeft' required><br><br> 
+    
+                          <label for='anyo' class='col100 mMarginTop'>Año</label> 
+                          <input type='number' name='anyo' id='newClienteanyo' class='col90 mMarginLeft' required><br><br> 
+    
+                          <label for='valoracion' class='col100 mMarginTop'>Valoración</label> 
+                          <input type='number' name='valoracion' id='valoracion' class='col90 mMarginLeft' required><br><br> 
+    
+                          <label for='etiquetas' class='col100 mMarginTop'>Etiquetas</label> 
+                          <input type='text' name='etiquetas' id='etiquetas' class='col90 mMarginLeft' required><br><br> 
+    
+                          <label for='descripcion' class='col100 mMarginTop'>Descripción</label> 
+                          <textarea class='col90 mMarginLeft' name='descripcion' cols='30' rows='2'></textarea><br><br> 
+                      </form>`;
+        document.getElementById("allForms").innerHTML = elemento;
+    }
   </script>
 </html>

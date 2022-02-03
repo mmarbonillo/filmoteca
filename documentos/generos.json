@@ -1,0 +1,68 @@
+[
+	{
+		"nombre": "animación"
+	},
+	{
+		"nombre": "aventura"
+	},
+	{
+		"nombre": "comedia"
+	},
+	{
+		"nombre": "drama"
+	},
+	{
+		"nombre": "romace"
+	},
+	{
+		"nombre": "familiar"
+	},
+	{
+		"nombre": "infantil"
+	},
+	{
+		"nombre": "II Guerra Mundial"
+	},
+	{
+		"nombre": "nazismo"
+	},
+	{
+		"nombre": "holocausto"
+	},
+	{
+		"nombre": "música"
+	},
+	{
+		"nombre": "biográfico"
+	},
+	{
+		"nombre": "histórico"
+	},
+	{
+		"nombre": "terror"
+	},
+	{
+		"nombre": "musical"
+	},
+	{
+		"nombre": "culto"
+	},
+	{
+		"nombre": "thriller"
+	},
+	{
+		"nombre": "hechos reales"
+	},
+	{
+		"nombre": "superhéroes"
+	},
+	{
+		"nombre": "cómic"
+	},
+	{
+		"nombre": "fantasía"
+	},
+	{
+		"nombre": "ciencia ficción"
+	}
+]

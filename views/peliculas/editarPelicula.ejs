@@ -1,0 +1,151 @@
+<html lang="es">
+  <head>
+    <link rel="stylesheet" href="/css/frontend.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <div class="centerH">
+        <div id="content" class="col70 bblack">
+<!--------------------------------- CABECERA ------------------------------>
+            <div id="header" class="col100 bred"></div>
+<!--------------------------------- CUERPO -------------------------------->
+            <div id="body" class="col100">
+    <!--------------------------------- MENÚ ---------------------------------->
+                <div id="menu" class="col15">
+                    <div id="menuPeliculas" class="col100 sMarginTop">
+                        <div id="menuPeliculasCapa1" class="col100">
+                            <div class="col10 mMarginLeft sMarginTop">
+                                <img src="/img/17343587831556273568.svg" alt="">
+                            </div>
+                            <p class="menuElement col80 xsMarginTop" onclick="contenidoPeliculas()">Películas</p>
+                        </div>
+                        <div id="menuPeliculasCapa2" class="col100">
+
+                        </div>
+                    </div>
+                    <div id="menuSeries" class="col100">
+                        <p class="menuElement">Series</p>
+                    </div>
+                </div>
+    <!--------------------------------- CONTENIDO ----------------------------->
+                <div id="content" class="col80">
+                    <div id="barraOpciones"></div>
+                    <div id="pelicula" class="col100 mMarginTop">
+                        <form action="/api/peliculas/editar/<%= pelicula.id %>" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_method" value="PUT">
+                            <div id="tituloValEdit" class="col55">
+                                <input type="text" name="titulo" value="<%= pelicula.titulo %>" class="col100" id="titulo">
+                                <div id="valoracionEdit" class="col50 sMarginLeft mMarginTop">
+                                    <% for(var i = 1; i <= 5; i++) { %>
+                                        <% if(i <= pelicula.valoracion ) { %>
+                                            <img src="/img/estrellaAmarilla.svg" alt="<%=i%>" class="col10 sMarginRight estrellaEdit estrellaAmarilla">
+                                        <% } else{ %>
+                                            <img src="/img/estrellaBlanca.svg" alt="<%=i%>" class="col10 sMarginRight estrellaEdit estrellaBlanca">
+                                        <% } %>
+                                    <% } %>
+                                    <input type="hidden" name="valorValoracion" value="<%=pelicula.valoracion%>">
+                                </div>
+                            </div>
+                            <div class="col40 right bblack">
+                                <img src="/img/peliculas/<%= pelicula.imagen %>" alt="" class=" jpgPelicula col100">
+                                <input type="hidden" name="imagenActual" value="<%= pelicula.imagen %>">
+                                <div class="col100">
+                                    <input id="imagen" type="file" name="imagen" class="col90 mMarginLeft mMarginTop">
+                                </div>
+                                <div class="col200">
+                                    <button type="submit">GUARDAR</button>
+                                </div>
+                            </div>
+                            <div class="col60 lMarginTop">
+                                <div class="col100">
+                                    <p class="col10 xsMarginTop">Año: </p>
+                                    <input type="number" name="anyoEdit" value="<%= pelicula.anyo %>">
+                                </div>
+                                <div class="col100">
+                                    <p class="col100 xsMarginTop">Etiquetas: </p>
+                                    <% for(var i = 0; i < listaGeneros.length; i++) { %>
+                                            <div class="col23">
+                                        <% var x = 0; %>
+                                        <% while(listaGeneros[i].nombre != etiquetas[x] && x < etiquetas.length) { %>
+                                            <% if(listaGeneros[i].nombre == etiquetas[x]){ %>
+                                                <input class="col20 sMarginTop" type="checkbox" name="unGenero" value="<%= listaGeneros[i]._id%>" checked > <p class="col80"><%= listaGeneros[i].nombre %></p>
+                                            <% } else{ %>
+                                                <% x+=1; %>
+                                            <% } %>
+                                        <% } %>
+                                        <% if(x == etiquetas.length){ %>
+                                            <input class="col20 sMarginTop" type="checkbox" name="unGenero" value="<%= listaGeneros[i]._id%>"> <p class="col80"><%= listaGeneros[i].nombre %></p>
+                                        <% } %>
+                                        <% if(listaGeneros[i].nombre == etiquetas[x]){ %>
+                                            <input class="col20 sMarginTop" type="checkbox" name="unGenero" value="<%= listaGeneros[i]._id%>" checked ><p class="col80"><%= listaGeneros[i].nombre %></p>
+                                        <% } %>
+                                            </div>
+                                    <% } %>
+                                    
+                                </div>
+                                
+                                <p>Sipnosis:</p>
+                                <textarea name="descripcion" id="descripcionEdit" cols="69" rows="10"><%= pelicula.descripcion %></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+    </div>
+
+    
+  </body>
+  <style>
+    #titulo{
+        height: 6%;
+        font-size: 200%;
+    }
+  </style>
+    <script>
+        //ANIMACIÓN DE LAS ESTRELLAS
+        $(".estrellaEdit").on({
+            mouseenter: function(){
+                var numClase = parseInt($(this).attr('alt'));
+                console.log("Valor: " + numClase);
+                for(var i = numClase; i >= 1; i--){
+                    $('img[alt="'+i+'"]').attr('src', '/img/estrellaAmarilla.svg');
+                    $('img[alt="'+i+'"]').removeClass('estrellaBlanca');
+                    $('img[alt="'+i+'"]').addClass('estrellaAmarilla');
+                }
+                for(var x = (numClase+1) ; x <= 5; x++){
+                    $('img[alt="'+x+'"]').attr('src', '/img/estrellaBlanca.svg');
+                    $('img[alt="'+x+'"]').removeClass('estrellaAmarilla');
+                    $('img[alt="'+x+'"]').addClass('estrellaBlanca');
+                }
+            },
+            click: function (){
+                var valorNuevo = $(this).attr('alt');
+                $('input[name="valorValoracion"]').val(valorNuevo);
+            },
+            mouseleave: function() {
+                var valorActual = parseInt($('input[name="valorValoracion"]').val());
+                for(var i = valorActual; i >= 1; i--){
+                    $('img[alt="'+i+'"]').attr('src', '/img/estrellaAmarilla.svg');
+                    $('img[alt="'+i+'"]').removeClass('estrellaBlanca');
+                    $('img[alt="'+i+'"]').addClass('estrellaAmarilla');
+                }
+                for(var x = (valorActual+1) ; x <= 5; x++){
+                    console.log("entra for: " + x);
+                    $('img[alt="'+x+'"]').attr('src', '/img/estrellaBlanca.svg');
+                    $('img[alt="'+x+'"]').removeClass('estrellaAmarilla');
+                    $('img[alt="'+x+'"]').addClass('estrellaBlanca');
+                }
+            }
+        });
+  </script>
+</html>
