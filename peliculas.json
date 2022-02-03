@@ -1,0 +1,304 @@
+[{
+  "_id": {
+    "$oid": "61f97972c41786295d07faa6"
+  },
+  "titulo": "El Rey León",
+  "anyo": 1994,
+  "valoracion": 5,
+  "etiquetas": [
+    "61f97664c41786295d07fa83",
+    "61f97664c41786295d07fa84",
+    "61f97664c41786295d07fa85",
+    "61f97664c41786295d07fa86"
+  ],
+  "imagen": "ElReyLeon.jpg",
+  "estado": true,
+  "descripcion": "La épica 61f97664c41786295d07fa84 de Disney que protagoniza Simba, un cachorro de león que está deseando ser rey. Llevado por el mal camino por su ambicioso tío Scar, Simba adopta un estilo de vida relajado con sus graciosos compañeros, Timón y Pumba, y olvida sus responsabilidades regias. Pero el destino llama y debe decidir cuándo volver a las Tierras del Reino y reclamar su lugar en el ciclo de la vida."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faa7"
+  },
+  "titulo": "El Rey León 2. El tesoro de Simba",
+  "anyo": 1998,
+  "valoracion": 5,
+  "etiquetas": [
+    "61f97664c41786295d07fa83",
+    "61f97664c41786295d07fa87",
+    "61f97664c41786295d07fa88",
+    "61f97664c41786295d07fa84",
+    "61f97664c41786295d07fa85"
+  ],
+  "imagen": "ElReyLeon2.jpg",
+  "estado": true,
+  "descripcion": "Experimenta el poder de upendi, que significa amor, cuando Kiara, la hija de Simba, busca 61f97664c41786295d07fa84s lejos de la mirada paterna. Timón y Pumba no pueden protegerla cuando se encuentra con un rival intrigante, Kovu, un cachorro educado para liderar el Orgullo de Scar. Mientras Kiara y Kovu buscan su lugar en el ciclo de la vida, descubren que deben unir sus orgullos y traer la paz."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faa8"
+  },
+  "titulo": "Un chihuahua en Beverly Hills",
+  "anyo": 2008,
+  "valoracion": 3.5,
+  "etiquetas": [
+    "61f97664c41786295d07fa88",
+    "61f97664c41786295d07fa85",
+    "61f97664c41786295d07fa89",
+    "61f97664c41786295d07fa84",
+    "61f97834c41786295d07fa9d"
+  ],
+  "imagen": "chihuahua.jpg",
+  "estado": true,
+  "descripcion": "Chloe es una simpática y presumida chihuahua que vive en Beverly Hills en una enorme mansión. Acostumbrada a los grandes lujos y a los mimos, un inesperado suceso la traslada a las calles de México donde se encuentra perdida. Allí no puede disfrutar de sus riquezas ni de sus actividades diarias. Tendrá que confiar en sus nuevos amigos para salir adelante y conseguir regresar a su vida de lujo con su dueña."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faa9"
+  },
+  "titulo": "El pianista",
+  "anyo": 2002,
+  "valoracion": 4.5,
+  "etiquetas": [
+    "61f97664c41786295d07fa86",
+    "61f97664c41786295d07fa8a",
+    "61f97664c41786295d07fa8b",
+    "61f97664c41786295d07fa8c",
+    "61f97664c41786295d07fa8d",
+    "61f97664c41786295d07fa8e",
+    "61f97664c41786295d07fa8f"
+  ],
+  "imagen": "pianista.jpg",
+  "estado": true,
+  "descripcion": "Wladyslaw Szpilman, un brillante pianista polaco de origen judío, vive con su familia en el ghetto de Varsovia. Cuando, en 1939, los alemanes invaden Polonia, consigue evitar la deportación gracias a la ayuda de algunos amigos."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faaa"
+  },
+  "titulo": "La casa de cera",
+  "anyo": 2005,
+  "valoracion": 3,
+  "etiquetas": [
+    "61f97664c41786295d07fa90"
+  ],
+  "imagen": "casaCera.jpg",
+  "estado": true,
+  "descripcion": "Un grupo de amigos se ve obligado a buscar ayuda en un pueblo fantasma cuando el vehículo en el que viajan se daña. Desafortunadamente, se topan con un lugar en el que habitan unos gemelos que sepultan vivas a sus víctimas en cera."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faab"
+  },
+  "titulo": "Grease",
+  "anyo": 1978,
+  "valoracion": 4.7,
+  "etiquetas": [
+    "61f97664c41786295d07fa85",
+    "61f97664c41786295d07fa91",
+    "61f97664c41786295d07fa87"
+  ],
+  "imagen": "grease.jpg",
+  "estado": true,
+  "descripcion": "El rebelde Danny Zuko y la inocente australiana Sandy mantienen un 61f97664c41786295d07fa87 durante las vacaciones de verano, creyendo que no se volverán a ver. Sin embargo, para la sorpresa de ambos, acaban estudiando juntos en el mismo instituto durante el nuevo curso."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faac"
+  },
+  "titulo": "Dirty Dancing",
+  "anyo": 1988,
+  "valoracion": 4,
+  "etiquetas": [
+    "61f97664c41786295d07fa87",
+    "61f97664c41786295d07fa86",
+    "61f978e7c41786295d07faa0",
+    "61f97664c41786295d07fa91"
+  ],
+  "imagen": "dirtyDancing.jpg",
+  "estado": true,
+  "descripcion": "Baby es una joven de 17 años que quiere disfrutar de su juventud. Por eso se decepciona cuando descubre que sus padres pasarán el verano con ella en un resort de Catskills. Sin embargo, su suerte cambia cuando conoce a Johnny, el experto y seductor profesor de 61f978e7c41786295d07faa0 del complejo."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faad"
+  },
+  "titulo": "La Dama y el Vagabundo",
+  "anyo": 1997,
+  "valoracion": 3.4,
+  "etiquetas": [
+    "61f97664c41786295d07fa83",
+    "61f97664c41786295d07fa89"
+  ],
+  "imagen": "damaVagabundo.jpg",
+  "estado": true,
+  "descripcion": "Enamórate de clásico de Disney. Vive las 61f97664c41786295d07fa84s de Reina, una encantadora y mimada cocker spaniel y Golfo, un desenvuelto perro callejero con un corazón de oro. Este enternecedor cuento enamora a una nueva generación de familias y fans con su exquisita 61f97664c41786295d07fa83, canciones inolvidables y una de las grandes historias de amor de todos los tiempos."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faae"
+  },
+  "titulo": "La Cenicienta",
+  "anyo": 1968,
+  "valoracion": 4.3,
+  "etiquetas": [
+    "61f97664c41786295d07fa83",
+    "61f97664c41786295d07fa89"
+  ],
+  "imagen": "cenicienta.jpg",
+  "estado": true,
+  "descripcion": "Cenicienta de Walt Disney ha cautivado al público durante generaciones. Con su varita mágica y un poco de Bibbidi-Bobbidi-Boo, el Hada Madrina de Cenicient transforma una sencilla calabaza en un magnífico carruaje y los harapos de Cenicienta en un precioso vestido de noche, y la envía al 61f978e7c41786295d07faa0 Real. Pero la encantadora velada de Cenicienta debe terminar cuando se rompa el hechizo a medianoche."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07faaf"
+  },
+  "titulo": "Encanto",
+  "anyo": 2021,
+  "valoracion": 3.9,
+  "etiquetas": [
+    "61f97664c41786295d07fa83",
+    "61f97664c41786295d07fa89",
+    "61f97664c41786295d07fa88",
+    "61f97664c41786295d07fa91"
+  ],
+  "imagen": "encanto.jpg",
+  "estado": true,
+  "descripcion": "Encanto, de Walt Disney Animation Studios, cuenta la historia de los Madrigal. Es una familia extraordinaria que vive escondida en un lugar mágico y maravilloso de la sierra de Colombia. La magia de su casa ha bendecido a todos los niños de la familia con un don único, desde la superfuerza hasta el poder de curar. A todos los hijos menos a una: Mirabel (doblada por la cantante colombiana Olga Lucía Vives). Pero cuando descubre que la magia que rodea Encanto corre peligro, Mirabel decide que ella, la única Madrigal normal y corriente, podría ser la última esperanza de su excepcional familia."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab0"
+  },
+  "titulo": "101 Dálmatas",
+  "anyo": 1961,
+  "valoracion": 3.2,
+  "etiquetas": [
+    "61f97664c41786295d07fa83",
+    "61f97664c41786295d07fa89",
+    "61f97664c41786295d07fa88"
+  ],
+  "imagen": "101Dalmatas.jpg",
+  "estado": true,
+  "descripcion": "El clásico de Walt Disney que ha seducido a varias generaciones con sus estrellas caninas, una historia memorable y una mezcla de humor y 61f97664c41786295d07fa84. Cruella De Vil, la villana más estrafalaria de Disney, secuestra a los cachorros dálmatas de Londres, incluidos los 15 de la familia de Pongo y Perdita. A través del poder de El ladrido del crepúsculo, Pongo lidera una misión para rescatarlos a todos."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab1"
+  },
+  "titulo": "La Naranja Mecánica",
+  "anyo": 1975,
+  "valoracion": 4.7,
+  "etiquetas": [
+    "61f97664c41786295d07fa86",
+    "61f978aec41786295d07fa9f",
+    "61f97664c41786295d07fa92",
+    "61f97664c41786295d07fa93"
+  ],
+  "imagen": "naranjaMecanica.jpg",
+  "estado": true,
+  "descripcion": "Gran Bretaña, en un futuro indeterminado. Alex (Malcolm McDowell) es un joven muy agresivo que tiene dos pasiones: la violencia desaforada y Beethoven. Es el jefe de la banda de los drugos, que dan rienda suelta a sus instintos más salvajes apaleando, violando y a61f97664c41786295d07fa90izando a la población. Cuando esa escalada de 61f97664c41786295d07fa90 llega hasta el asesinato, Alex es detenido y, en prisión, se someterá voluntariamente a una innovadora experiencia de reeducación que pretende anular drásticamente cualquier atisbo de conducta antisocial."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab2"
+  },
+  "titulo": "Titanic",
+  "anyo": 1997,
+  "valoracion": 4.3,
+  "etiquetas": [
+    "61f97664c41786295d07fa87",
+    "61f97664c41786295d07fa86",
+    "61f97664c41786295d07fa84",
+    "61f97664c41786295d07fa94"
+  ],
+  "imagen": "titanic.jpg",
+  "estado": true,
+  "descripcion": "Jack (DiCaprio), un joven artista, gana en una partida de cartas un pasaje para viajar a América en el Titanic, el transatlántico más grande y seguro jamás construido. A bordo conoce a Rose (Kate Winslet), una joven de una buena familia venida a menos que va a contraer un matrimonio de conveniencia con Cal (Billy Zane), un millonario engreído a quien sólo interesa el prestigioso apellido de su prometida. Jack y Rose se enamoran, pero el prometido y la madre de ella ponen todo tipo de trabas a su relación. Mientras, el gigantesco y lujoso transatlántico se aproxima hacia un inmenso iceberg."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab3"
+  },
+  "titulo": "Spiderman",
+  "anyo": 2002,
+  "valoracion": 3.2,
+  "etiquetas": [
+    "61f97834c41786295d07fa9d",
+    "61f97664c41786295d07fa95",
+    "61f97664c41786295d07fa96",
+    "61f9780ac41786295d07fa9c"
+  ],
+  "imagen": "spiderman.jpg",
+  "estado": true,
+  "descripcion": "Tras la muerte de sus padres, Peter Parker, un tímido estudiante, vive con su tía May y su tío Ben. Precisamente debido a su retraimiento no es un chico muy popular en el instituto. Un día le muerde una araña que ha sido modificada genéticamente; a la mañana siguiente, descubre estupefacto que posee la fuerza y la agilidad de ese insecto. Las 61f97664c41786295d07fa84s del hombre araña se basan en el famoso 61f97664c41786295d07fa96 de Stan Lee y Steve Ditko."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab4"
+  },
+  "titulo": "Venom",
+  "anyo": 2018,
+  "valoracion": 3,
+  "etiquetas": [
+    "61f9788ec41786295d07fa9e",
+    "61f9780ac41786295d07fa9c",
+    "61f97834c41786295d07fa9d",
+    "61f97664c41786295d07fa85",
+    "61f97664c41786295d07fa96",
+    "61f97664c41786295d07fa95"
+  ],
+  "imagen": "venom.jpg",
+  "estado": true,
+  "descripcion": "Como periodista, Eddie Brock (Tom Hardy) lleva tiempo intentando desenmascarar al creador de la Fundación Vida, el famoso genio científico Carlton Drake (Riz Ahmed), una obsesión que ha arruinado su carrera y su relación con su novia, Anne (Michelle Williams). Al investigar uno de los experimentos de Drake, el ente alienígena Venom se fusiona con el cuerpo de Eddie, y el reportero adquiere de pronto nuevos e increíbles superpoderes, así como la oportunidad de hacer prácticamente lo que se le antoje. Retorcido, oscuro, impredecible e impulsado por la cólera, Venom obliga a Eddie a luchar por controlar unas habilidades sumamente peligrosas que, al mismo tiempo, también resultan embriagadoras y le hacen sentir poderoso. Dado que Eddie y Venom se necesitan mutuamente para conseguir lo que quieren, se van entremezclando cada vez más... ¿Dónde acaba Eddie y empieza Venom?."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab5"
+  },
+  "titulo": "Iron Man",
+  "anyo": 2008,
+  "valoracion": 4.2,
+  "etiquetas": [
+    "61f9788ec41786295d07fa9e",
+    "61f97834c41786295d07fa9d",
+    "61f97664c41786295d07fa84",
+    "61f97664c41786295d07fa85",
+    "61f97664c41786295d07fa96",
+    "61f97664c41786295d07fa95"
+  ],
+  "imagen": "ironMan.jpg",
+  "estado": true,
+  "descripcion": "El multimillonario fabricante de armas Tony Stark (Robert Downey Jr.) debe enfrentarse a su turbio pasado después de sufrir un accidente con una de sus armas. Equipado con una armadura de última generación tecnológica, se convierte en El hombre de hierro, un héroe que se dedica a combatir el mal en todo el mundo."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab6"
+  },
+  "titulo": "Los Vengadores",
+  "anyo": 2012,
+  "valoracion": 4.3,
+  "etiquetas": [
+    "61f9788ec41786295d07fa9e",
+    "61f97834c41786295d07fa9d",
+    "61f97664c41786295d07fa84",
+    "61f97664c41786295d07fa96",
+    "61f97664c41786295d07fa95"
+  ],
+  "imagen": "vengadores.jpg",
+  "estado": true,
+  "descripcion": "Cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial, Nick Fury, director de la Agencia SHIELD, decide reclutar a un equipo para salvar al mundo de un desastre casi seguro. Adaptación del 61f97664c41786295d07fa96 de Marvel Los Vengadores, el legendario grupo de 61f97664c41786295d07fa95 formado por Ironman, Hulk, Thor y el Capitán América entre otros."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab7"
+  },
+  "titulo": "Como entrenar a tu Dragón",
+  "anyo": 2010,
+  "valoracion": 4.3,
+  "etiquetas": [
+    "61f97664c41786295d07fa83",
+    "61f9780ac41786295d07fa9c",
+    "61f97664c41786295d07fa84",
+    "61f97664c41786295d07fa89"
+  ],
+  "imagen": "entrenarDragon.jpg",
+  "estado": true,
+  "descripcion": "Ambientada en el mítico mundo de los rudos vikingos y los dragones salvajes, y basada en el libro 61f97664c41786295d07fa89 de Cressida Cowell, esta 61f97664c41786295d07fa85 de 61f97834c41786295d07fa9d narra la historia de Hipo, un vikingo adolescente que no encaja exactamente en la antiquísima reputación de su tribu como cazadores de dragones. El mundo de Hipo se trastoca al encontrar a un dragón que le desafía a él y a sus compañeros vikingos, a ver el mundo desde un punto de vista totalmente diferente."
+},{
+  "_id": {
+    "$oid": "61f97972c41786295d07fab8"
+  },
+  "titulo": "El Diario de Noah",
+  "anyo": 2004,
+  "valoracion": 4,
+  "etiquetas": [
+    "61f97664c41786295d07fa86",
+    "61f97664c41786295d07fa87"
+  ],
+  "imagen": "diarioNoah.jpg",
+  "estado": true,
+  "descripcion": "En una residencia de ancianos, un hombre (James Garner) lee a una mujer (Gena Rowlands) una historia de amor escrita en su viejo cuaderno de notas. Es la historia de Noah Calhoun (Ryan Gosling) y Allie Hamilton (Rachel McAdams), dos jóvenes adolescentes de Carolina del Norte que, a pesar de vivir en dos ambientes sociales muy diferentes, se enamoraron profundamente y pasaron juntos un verano inolvidable, antes de ser separados, primero por sus padres, y más tarde por la guerra."
+}]

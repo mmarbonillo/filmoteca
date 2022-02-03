@@ -1,0 +1,8 @@
+[
+	{
+		"usuario": "", //será id
+		"comentario": "",
+		"comentario_padre": "" //será id
+		
+	}
+]
