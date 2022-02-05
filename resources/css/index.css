@@ -1,0 +1,28 @@
+.jpgPelicula:hover {
+    -webkit-transform: scale(1.03); 
+    -moz-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    transform: scale(1.03);
+    overflow: hidden;
+    cursor: pointer;
+}
+.menuElement:hover {
+cursor: pointer;
+}
+button.round {
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+}
+#allForms {
+    margin-top: -7%;
+}
+.valoracionPelicula {
+    position: relative;
+}
+.imgPelicula {
+    height: 23.5%;
+}
+.jpgPelicula{
+    height: 98%;
+}

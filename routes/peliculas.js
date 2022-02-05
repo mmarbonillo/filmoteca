@@ -39,8 +39,8 @@ ruta.get('/', (req, res) => {
 });
 
 /* index con paginacion */
-ruta.get('/:numPage', (req, res) => {
-    let resultado = peli.listarPeliculasActivas(re.params.numPage, 6);
+ruta.get('/:numPage/:numFills', (req, res) => {
+    let resultado = peli.listarPeliculasActivas(req.params.numPage, 6);
     resultado.then(peliculas => {
         res.render("index.ejs", { 
             titulo: "Index EJS",
@@ -52,21 +52,14 @@ ruta.get('/:numPage', (req, res) => {
 });
 
 //GET de añadir pelicula. Muestra el formulario para añadir una película nueva
-ruta.get('/nueva', (req, res) => {
-    let resultado = peli.listarPeliculasActivas();
-    resultado.then(peliculas => {
-        res.render("\peliculas\\add.ejs", { 
-            titulo: "Index EJS",
-            peliculas: peliculas
-        
-        });
-    }).catch(err => {
-        res.status(400).json(err);
-    })
+ruta.get('/add', (req, res) => {
+    res.render("\peliculas\\add.ejs", { 
+        titulo: "Añadir Película"
+    });
 });
 
 //GET de ver una película
-ruta.get('/:id', (req, res) => {
+ruta.get('/ver/:id', (req, res) => {
     let resultado = peli.verPelicula(req.params.id);
     resultado.then(pelicula => {
         let generosPelicula = pelicula.etiquetas;

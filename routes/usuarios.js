@@ -1,8 +1,10 @@
 const express = require('express');
 const Usuario = require('../models/usuarioModel');
+const bcrypt = require('bcrypt');
 const Joi = require('@hapi/joi');
 const ruta = express.Router();
 
+/* VALIDACIONES DE DATOS */
 const schema = Joi.object({
     nombre: Joi.string()
         .min(3)
@@ -10,10 +12,12 @@ const schema = Joi.object({
         .required(),
 
     password: Joi.string()
-        .pattern(/^[a-zA-Z0-9]{3,30}$/),
+        .pattern(/^[a-zA-Z0-9]{3,30}$/)
+        .required(),
 
     email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'es'] } })
+        .required()
 });
 
 ruta.get('/',(req, res) => {
@@ -93,7 +97,7 @@ async function crearUsuario(body){
     let usuario = new Usuario({
         email       : body.email,
         nombre      : body.nombre,
-        password    : body.password
+        password    : bcrypt.hashSync(body.password) //encriptar password
     });
     return await usuario.save();
 }

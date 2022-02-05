@@ -1,8 +1,7 @@
 [
 	{
-		"usuario": "", //será id
-		"comentario": "",
-		"comentario_padre": "" //será id
+		"nombreUsuario": "mmarbonillo",
+		"email": "mmarbonillo@gmail.com",
 		
 	}
 ]
