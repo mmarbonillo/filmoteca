@@ -58,6 +58,22 @@ ruta.get('/add', (req, res) => {
     });
 });
 
+/*
+* index de películas por POST. Crea una película
+*/
+ruta.post('/', (req, res) => {
+    let resultado = peli.crearPelicula(req.body, req.files);
+    resultado.then(peliculas => {
+        res.json({
+            status: true
+        })
+    }).catch(err => {
+        res.status(400).json({
+            status: false
+        })
+    })
+});
+
 //GET de ver una película
 ruta.get('/ver/:id', (req, res) => {
     let resultado = peli.verPelicula(req.params.id);
@@ -104,22 +120,6 @@ ruta.get('/editar/:id', (req, res) => {
         })
     }).catch(err => {
         res.status(400).json(err);
-    })
-});
-
-/*
-* index de películas por POST. Crea una película
-*/
-ruta.post('/', (req, res) => {
-    let resultado = peli.crearPelicula(req.body, req.files);
-    resultado.then(peliculas => {
-        res.json({
-            status: true
-        })
-    }).catch(err => {
-        res.status(400).json({
-            status: false
-        })
     })
 });
 

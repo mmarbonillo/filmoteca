@@ -1,0 +1,93 @@
+<html lang="es">
+  <head>
+    <%- include('../plantillas/head'); %>
+  </head>
+
+  <body>
+
+    <div class="centerH">
+        <div id="content" class="col70 bblack">
+<!--------------------------------- CABECERA ------------------------------>
+            <%- include('../plantillas/header'); %>
+<!--------------------------------- CUERPO -------------------------------->
+            <div id="body" class="col100">
+    <!--------------------------------- MENÚ ---------------------------------->
+                <%- include('../plantillas/menu'); %>
+    <!--------------------------------- CONTENIDO ----------------------------->
+                <div id="content" class="col70">
+                    <div id="options" class="col100">
+                        <div id="login" class="col45"></div>
+                        <div id="registro" class="col45">
+                            <form class="col50" action="/api/usuarios" method="POST" enctype="multipart/form-data">
+                                <label for="userName" class="col100 mMarginTop">Nombre de Usuario:</label><br><br>
+                                <input id="userName" type="text" name="userName" class="col90 mMarginLeft"><br>
+                                
+                                <label for="email" class="col100 mMarginTop">Email</label>
+                                <input type="email" name="email" id="email" class="col90 mMarginLeft" required><br><br>
+        
+                                <label for="password" class="col100 mMarginTop">Contraseña</label>
+                                <input id="password" type="password" name="password" class="col90 mMarginLeft" required><br><br>
+
+                                <label for="passwordConfirm" class="col100 mMarginTop">Confirmar contraseña</label>
+                                <input id="passwordConfirm" type="password" name="passwordConfirm" class="col90 mMarginLeft" required><br><br>
+
+                                <button id="submitAñadir" type="submit" class="clear hidden">Enviar</button>
+                            </form>
+                            <input type="button" value="Enviar" onclick="comprobarUsuario()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+    </div>
+  </body>
+</html>
+
+<script>
+    function validarUsuarioNuevo(){
+        $.ajax({
+            url: '/api/login/validar',
+            type: 'POST',
+            data: {
+            'nombreUsuario': $('#userName').val(),
+            'email': $('#email').val(),
+            'password': $('#password').val(),
+            'passwordConfirm': $('#passwordConfirm').val()
+        },
+        success:function(result){
+            if(!result){
+                alert("Error en la validación de datos");
+            }else{
+                $('#submitAñadir').click();
+            }
+        },
+        error:function(err) {
+            alert('error ajax');
+        }
+        });
+    }
+
+    function comprobarUsuario(){
+        $.ajax({
+            url: '/api/login/comprobar',
+            type: 'POST',
+            data: {
+            'nombreUsuario': $('#userName').val(),
+            'email': $('#email').val(),
+        },
+        success:function(result){
+            console.log('RESPUESTA AJAX --> ' + result.usuario);
+            if(result.usuario == undefined){
+                validarUsuarioNuevo();
+            }else {
+                alert('El usuario ya existe');
+            }
+        },
+        error:function(err) {
+            //alert('error ajax');
+        }
+        });
+    }
+
+</script>

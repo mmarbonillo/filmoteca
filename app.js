@@ -1,5 +1,6 @@
 const usuarios = require('./routes/usuarios');
 const peliculas = require('./routes/peliculas');
+const login = require('./routes/auth');
 const express = require('express');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
@@ -25,6 +26,7 @@ app.set("views, ./views");
 app.set("resources/img, ./resources/img/");
 app.use('/api/usuarios', usuarios);
 app.use('/api/peliculas', peliculas);
+app.use('/api/login', login);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

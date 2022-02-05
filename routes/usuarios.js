@@ -1,8 +1,11 @@
 const express = require('express');
-const Usuario = require('../models/usuarioModel');
+const Usuarios = require('../models/usuarioModel');
+const Usuario = require('../controllers/usuariosController');
 const bcrypt = require('bcrypt');
 const Joi = require('@hapi/joi');
 const ruta = express.Router();
+
+const user = new Usuario();
 
 /* VALIDACIONES DE DATOS */
 const schema = Joi.object({
@@ -12,7 +15,7 @@ const schema = Joi.object({
         .required(),
 
     password: Joi.string()
-        .pattern(/^[a-zA-Z0-9]{3,30}$/)
+        .pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$_!%*?&])([A-Za-z\d$@$_!%*?&]|[^ ]){8,15}$/) //Expresión regular sacada de internet. Yo ya no me acuerdo como se hacen
         .required(),
 
     email: Joi.string()
@@ -34,26 +37,14 @@ ruta.get('/',(req, res) => {
 });
 
 ruta.post('/', (req, res) => {
-    let body = req.body;
-
-    const {error, value} = schema.validate({nombre: body.nombre, email: body.email});
-    if(!error){
-        let resultado = crearUsuario(body);
-
-        resultado.then( user => {
-            res.json({
-                valor: user
-            })
-        }).catch( err => {
-            res.status(400).json({
-                err
-            })
+    let resultado = user.addUsuario(req.body);
+    resultado.then(usuario => {
+        res.render("\auth\\confirmarAdd.ejs", { 
+            titulo: "Usuario añadido correctamente"
         });
-    }else{
-        res.status(400).json({
-            error
-        })
-    }    
+    }).catch(err => {
+        console.log(err);
+    })
 });
 
 ruta.put('/:email', (req, res) => {
@@ -72,9 +63,7 @@ ruta.put('/:email', (req, res) => {
             })
         });
     }else{
-        res.status(400).json({
-            error
-        })
+        console.log(value);
     }
 
     
