@@ -32,6 +32,15 @@ const schema = Joi.object({
 ruta.post('/comprobar', (req, res) => {
     let resultado = user.comprobarUsuarioExiste(req.body.email, req.body.nombreUsuario);
     resultado.then(datos => {
+        console.log(datos);
+        res.send(datos);
+    })
+});
+
+ruta.post('/comprobarPass', (req, res) => {
+    let resultado = user.comprobarPass(req.body.email, req.body.pass);
+    resultado.then(datos => {
+        console.log(datos);
         res.send(datos);
     })
 });
@@ -43,7 +52,10 @@ ruta.post('/validar', (req, res) => {
         password: req.body.password
     });
     if(!error){
-        res.send(true);
+        if(req.body.password == req.body.passwordConfirm)
+            res.send(true);
+        else
+            res.send(false);
     }else{
         res.send(false);
     }

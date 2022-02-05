@@ -26,9 +26,15 @@ const schema = Joi.object({
 class Usuarios {
 
     constructor(){}
-
+//{ $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] }
     comprobarUsuarioExiste(email, nombreUsuario){
-        let usuario = Usuario.find().or([{"email": email}, {"nombreUsuario": nombreUsuario}])
+        let usuario = Usuario.find({ $or: [{ 'email': email}, {'nombreUsuario': nombreUsuario }] });
+        return usuario;
+    }
+
+    comprobarPass(email, password){
+        let passEncriptada = bcrypt.hashSync(password, 10);
+        let usuario = Usuario.find({ $and: [{ 'email': email}, {'password': passEncriptada }] });
         return usuario;
     }
 

@@ -16,7 +16,20 @@
     <!--------------------------------- CONTENIDO ----------------------------->
                 <div id="content" class="col70">
                     <div id="options" class="col100">
-                        <div id="login" class="col45"></div>
+                        <div id="login" class="col45">
+                            <form class="col50" action="/api/usuarios" method="POST" enctype="multipart/form-data">
+                                <label for="emailLogin" class="col100 mMarginTop">Email</label>
+                                <input type="email" name="emailLogin" id="emailLogin" class="col100 mMarginLeft" required><br><br>
+        
+                                <label for="passwordLogin" class="col100 mMarginTop">Contraseña</label>
+                                <input id="passwordLogin" type="password" name="passwordLogin" class="col100 mMarginLeft" required><br><br>
+
+                                <button id="submitIniciarSesion" type="submit" class="clear hidden">Enviar</button>
+                            </form>
+                            <div class="col100">
+                                <input class="clear" type="button" value="Iniciar sesión" onclick="comprobarUsuario()">
+                            </div>
+                        </div>
                         <div id="registro" class="col45">
                             <form class="col50" action="/api/usuarios" method="POST" enctype="multipart/form-data">
                                 <label for="userName" class="col100 mMarginTop">Nombre de Usuario:</label><br><br>
@@ -33,7 +46,7 @@
 
                                 <button id="submitAñadir" type="submit" class="clear hidden">Enviar</button>
                             </form>
-                            <input type="button" value="Enviar" onclick="comprobarUsuario()">
+                            <input class="clear" type="button" value="Enviar" onclick="comprobarUsuarioNuevo()">
                         </div>
                     </div>
                 </div>
@@ -68,7 +81,28 @@
         });
     }
 
-    function comprobarUsuario(){
+    function comprobarPassword(email, pass){
+        $.ajax({
+            url: '/api/login/comprobarPass',
+            type: 'POST',
+            data: {
+            'email': email,
+            'password': pass
+        },
+        success:function(result){
+            if(result[0] == undefined){
+                alert('Usuario o contraseña incorrectos');
+            }else {
+                alert('Has entrado');
+            }
+        },
+        error:function(err) {
+            //alert('error ajax');
+        }
+        });
+    }
+
+    function comprobarUsuarioNuevo(){
         $.ajax({
             url: '/api/login/comprobar',
             type: 'POST',
@@ -77,11 +111,32 @@
             'email': $('#email').val(),
         },
         success:function(result){
-            console.log('RESPUESTA AJAX --> ' + result.usuario);
-            if(result.usuario == undefined){
+            if(result[0] == undefined){
                 validarUsuarioNuevo();
             }else {
                 alert('El usuario ya existe');
+            }
+        },
+        error:function(err) {
+            //alert('error ajax');
+        }
+        });
+    }
+
+    function comprobarUsuario(){
+        $.ajax({
+            url: '/api/login/comprobar',
+            type: 'POST',
+            data: {
+            'email': $('#emailLogin').val(),
+            'nombreUsuario': ""
+        },
+        success:function(result){
+            console.log(result);
+            if(result[0] != undefined){
+                comprobarPassword($('#emailLogin').val(), $('#passwordLogin').val());
+            }else{
+                alert('El usuario no existe');
             }
         },
         error:function(err) {
