@@ -1,12 +1,6 @@
 <html lang="es">
   <head>
-    <link rel="stylesheet" href="/css/frontend.css" />
-    <link rel="stylesheet" href="/css/app.css" />
-    <link rel="stylesheet" href="/css/global.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include('../plantillas/head'); %>
   </head>
 
   <body>
@@ -14,26 +8,11 @@
     <div class="centerH">
         <div id="content" class="col70 bblack">
 <!--------------------------------- CABECERA ------------------------------>
-            <div id="header" class="col100 bred"></div>
+            <%- include('../plantillas/header'); %>
 <!--------------------------------- CUERPO -------------------------------->
             <div id="body" class="col100">
     <!--------------------------------- MENÚ ---------------------------------->
-                <div id="menu" class="col15">
-                    <div id="menuPeliculas" class="col100 sMarginTop">
-                        <div id="menuPeliculasCapa1" class="col100">
-                            <div class="col10 mMarginLeft sMarginTop">
-                                <img src="/img/17343587831556273568.svg" alt="">
-                            </div>
-                            <p class="menuElement col80 xsMarginTop" onclick="contenidoPeliculas()">Películas</p>
-                        </div>
-                        <div id="menuPeliculasCapa2" class="col100">
-
-                        </div>
-                    </div>
-                    <div id="menuSeries" class="col100">
-                        <p class="menuElement">Series</p>
-                    </div>
-                </div>
+                <%- include('../plantillas/menu'); %>
     <!--------------------------------- CONTENIDO ----------------------------->
                 <div id="content" class="col80">
                     <div id="barraOpciones"></div>
@@ -50,11 +29,11 @@
                                 <% } %>
                             </div>
                             <div class="col30 lMarginLeft">
-                                <button class="col45 smMarginTop mMarginRight" onclick="$(location).attr('href','/api/peliculas/editar/<%= pelicula._id %>');">Editar</button>
+                                <button class="col45 smMarginTop mMarginRight" onclick="$(location).attr('href','/api/peliculas/editar/pelicula/<%= pelicula._id %>');">Editar</button>
                                 <button class="col45 smMarginTop" onclick="confirmarEliminar()">Eliminar</button>
                             </div>
                             <div class="hidden">
-                                <form class="col45 smMarginTop" action="/api/peliculas/delete/<%=pelicula._id%>" method="post" enctype="multipart/form-data">
+                                <form class="col45 smMarginTop" action="/api/peliculas/delete/pelicula/<%=pelicula._id%>" method="post" enctype="multipart/form-data">
                                     <button class="col100" type="submit" id="botonEliminar">Eliminar</button>
                                 </form>
                             </div>

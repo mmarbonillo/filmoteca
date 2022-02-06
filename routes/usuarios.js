@@ -23,8 +23,8 @@ const schema = Joi.object({
         .required()
 });
 
-ruta.get('/',(req, res) => {
-    let resultado = listarUsuarioActivos();
+ruta.get('/', (req, res) => {
+    let resultado = user.listarUsuarioActivos();
     resultado.then(usuarios => {
         res.json(usuarios)
     }).catch(err => {
@@ -89,11 +89,6 @@ async function crearUsuario(body){
         password    : bcrypt.hashSync(body.password) //encriptar password
     });
     return await usuario.save();
-}
-
-async function listarUsuarioActivos(){
-    let usuarios = await Usuario.find({"estado": true});
-    return usuarios;
 }
 
 async function actualizarUsuario(email, body){

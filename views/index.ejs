@@ -20,7 +20,7 @@
                     <div id="barraOpciones"></div>
                     <div id="peliculas" class="col100 mMarginTop">
                         <% peliculas.forEach(function(peliculas) { %>
-                            <div id="<%= peliculas._id %>" class="unaPelicula col30 mMarginRight" onclick="$(location).attr('href','/api/peliculas/ver/<%= peliculas._id %>');">
+                            <div id="<%= peliculas._id %>" class="unaPelicula col30 mMarginRight" onclick="$(location).attr('href','/api/peliculas/ver/pelicula/<%= peliculas._id %>');">
                                 <div class="col100 fondoPelicula">
                                     <div class="valoracionPelicula" class="col100">
                                         <% for(var i = 1; i <= 5; i++) { %>

@@ -1,0 +1,10 @@
+{
+    "nombre" : "API Rest Express - Filmoteca",
+    "configDB":{
+        "HOST": "mongodb://localhost:27017/filmoteca"
+    },
+    "configToken":{
+        "SEED":"palabraSecreta",
+        "expiration" : "24h"
+    }
+}

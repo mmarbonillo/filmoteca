@@ -2,9 +2,14 @@ const express = require('express');
 const Usuarios = require('../models/usuarioModel');
 const Usuario = require('../controllers/usuariosController');
 const bcrypt = require('bcrypt');
+const config = require('config');
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 const Joi = require('@hapi/joi');
 const { json } = require('express');
 const ruta = express.Router();
+const app = express();
+app.use(cookieParser())
 
 const user = new Usuario();
 
@@ -43,7 +48,11 @@ ruta.post('/comprobarPass', (req, res) => {
         //console.log(req.body.password);
         let compara = bcrypt.compareSync(req.body.password, datos[0].password);
         if(compara){
-            res.send(true);
+            let usuario = datos[0];
+            const jwToken = jwt.sign({
+                usuario: {_id: usuario._id, nombre: usuario.nombreUsuario, email: usuario.email}
+                }, config.get('configToken.SEED'), { expiresIn: config.get('configToken.expiration') });
+            res.cookie('jwToken', jwToken).send(jwToken);
         }else{
             res.send(false);
         }
@@ -71,5 +80,14 @@ ruta.get('/', (req, res) => {
         titulo: "Index EJS"
     });
 })
+
+ruta.post('/conectar', (req, res) => {
+    let resultado = user.getUsuario(req.body.emailLogin);
+    resultado.then(usuario => {
+        console.log(usuario);
+        
+    })
+});
+
 
 module.exports = ruta;

@@ -17,7 +17,7 @@
                 <div id="content" class="col70">
                     <div id="options" class="col100">
                         <div id="login" class="col45">
-                            <form class="col50" action="/api/usuarios" method="POST" enctype="multipart/form-data">
+                            <form class="col50" action="/api/login/conectar" method="POST" enctype="multipart/form-data">
                                 <label for="emailLogin" class="col100 mMarginTop">Email</label>
                                 <input type="email" name="emailLogin" id="emailLogin" class="col100 mMarginLeft" required><br><br>
         
@@ -94,7 +94,7 @@
             if(!result){
                 alert('Usuario o contraseña incorrectos');
             }else{
-                $('#submitIniciarSesion').click();
+                $(location).attr('href', '/api/peliculas');
             }
         },
         error:function(err) {

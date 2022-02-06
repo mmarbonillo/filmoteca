@@ -1,12 +1,6 @@
 <html lang="es">
   <head>
-    <link rel="stylesheet" href="/css/frontend.css" />
-    <link rel="stylesheet" href="/css/app.css" />
-    <link rel="stylesheet" href="/css/global.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include('../plantillas/head'); %>
   </head>
 
   <body>
@@ -14,31 +8,18 @@
     <div class="centerH">
         <div id="content" class="col70 bblack">
 <!--------------------------------- CABECERA ------------------------------>
-            <div id="header" class="col100 bred"></div>
+            <%- include('../plantillas/header'); %>
 <!--------------------------------- CUERPO -------------------------------->
             <div id="body" class="col100">
     <!--------------------------------- MENÚ ---------------------------------->
                 <div id="menu" class="col15">
-                    <div id="menuPeliculas" class="col100 sMarginTop">
-                        <div id="menuPeliculasCapa1" class="col100">
-                            <div class="col10 mMarginLeft sMarginTop">
-                                <img src="/img/17343587831556273568.svg" alt="">
-                            </div>
-                            <p class="menuElement col80 xsMarginTop" onclick="contenidoPeliculas()">Películas</p>
-                        </div>
-                        <div id="menuPeliculasCapa2" class="col100">
-
-                        </div>
-                    </div>
-                    <div id="menuSeries" class="col100">
-                        <p class="menuElement">Series</p>
-                    </div>
+                    <%- include('../plantillas/menu'); %>
                 </div>
     <!--------------------------------- CONTENIDO ----------------------------->
                 <div id="content" class="col80">
                     <div id="barraOpciones"></div>
                     <div id="pelicula" class="col100 mMarginTop">
-                        <form action="/api/peliculas/editar/<%= pelicula.id %>" method="post" enctype="multipart/form-data">
+                        <form action="/api/peliculas/editar/pelicula/<%= pelicula.id %>" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_method" value="PUT">
                             <div id="tituloValEdit" class="col55">
                                 <input type="text" name="titulo" value="<%= pelicula.titulo %>" class="col100" id="titulo">

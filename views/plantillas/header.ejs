@@ -1,6 +1,6 @@
 <div id="header" class="col100 bred">
     <div class="col5 right sMarginTop">
-        <img id="login" class="col60" src="/img/17503049231586786427.svg" onclick="$(location).attr('href','/api/login/');">
+        <img id="login" class="col60" src="/img/17503049231586786427.svg" onclick="redireccionar()">
     </div>
 </div>
 
@@ -10,3 +10,15 @@
     }
 
 </style>
+
+<script>
+
+    function redireccionar(){
+        if(document.cookie == ""){
+            $(location).attr('href','/api/login/');
+        }else{
+            $(location).attr('href','/api/usuarios/');
+        }
+    }
+    
+</script>

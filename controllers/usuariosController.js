@@ -52,6 +52,16 @@ class Usuarios {
         //console.log(resultado);
         return resultado;
     }
+
+    getUsuario(email){
+        let usuario = Usuario.find({ 'email': email });
+        return usuario;
+    }
+
+    listarUsuarioActivos(){
+        let usuarios = Usuario.find({"estado": true});
+        return usuarios;
+    }
     
 }
 

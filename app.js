@@ -1,6 +1,7 @@
 const usuarios = require('./routes/usuarios');
 const peliculas = require('./routes/peliculas');
 const login = require('./routes/auth');
+const config = require('config');
 const express = require('express');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
@@ -9,7 +10,7 @@ const fileUpload = require('express-fileupload');
 
 
 //Conectarnos a la BD
-mongoose.connect('mongodb://localhost:27017/filmoteca', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(config.get('configDB.HOST'), {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('Conectado a MongoDB...'))
     .catch(err => console.log('No se pudo conectar con MongoDB..', err));
 
