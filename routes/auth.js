@@ -32,16 +32,21 @@ const schema = Joi.object({
 ruta.post('/comprobar', (req, res) => {
     let resultado = user.comprobarUsuarioExiste(req.body.email, req.body.nombreUsuario);
     resultado.then(datos => {
-        console.log(datos);
         res.send(datos);
     })
 });
 
 ruta.post('/comprobarPass', (req, res) => {
-    let resultado = user.comprobarPass(req.body.email, req.body.pass);
+    let resultado = user.comprobarPass(req.body.email, req.body.password);
     resultado.then(datos => {
-        console.log(datos);
-        res.send(datos);
+        //console.log(datos[0].password);
+        //console.log(req.body.password);
+        let compara = bcrypt.compareSync(req.body.password, datos[0].password);
+        if(compara){
+            res.send(true);
+        }else{
+            res.send(false);
+        }
     })
 });
 

@@ -33,8 +33,7 @@ class Usuarios {
     }
 
     comprobarPass(email, password){
-        let passEncriptada = bcrypt.hashSync(password, 10);
-        let usuario = Usuario.find({ $and: [{ 'email': email}, {'password': passEncriptada }] });
+        let usuario = Usuario.find({ 'email': email});
         return usuario;
     }
 

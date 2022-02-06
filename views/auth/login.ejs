@@ -90,10 +90,11 @@
             'password': pass
         },
         success:function(result){
-            if(result[0] == undefined){
+            //console.log(result);
+            if(!result){
                 alert('Usuario o contraseña incorrectos');
-            }else {
-                alert('Has entrado');
+            }else{
+                $('#submitIniciarSesion').click();
             }
         },
         error:function(err) {
@@ -132,7 +133,6 @@
             'nombreUsuario': ""
         },
         success:function(result){
-            console.log(result);
             if(result[0] != undefined){
                 comprobarPassword($('#emailLogin').val(), $('#passwordLogin').val());
             }else{
