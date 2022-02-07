@@ -4,7 +4,9 @@
             <div class="col10 mMarginLeft sMarginTop">
                 <img src="/img/17343587831556273568.svg" alt="">
             </div>
-            <p class="menuElement col80 xsMarginTop" onclick="$(location).attr('href','/api/peliculas');">Películas</p>
+            <div class="col80 xsMarginTop">
+                <p class="menuElement col30" onclick="$(location).attr('href','/api/peliculas');">Películas</p>
+            </div>
         </div>
         <div id="menuPeliculasCapa2" class="col100">
 
@@ -14,3 +16,9 @@
         <p class="menuElement">Series</p>
     </div>
 </div>
+
+<style>
+    .menuElement:hover {
+        cursor: pointer;
+    }
+</style>

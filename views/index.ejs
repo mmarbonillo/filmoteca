@@ -2,7 +2,6 @@
   <head>
     <%- include('plantillas/head'); %>
     <link rel="stylesheet" href="/css/index.css" />
-    <script src="/js/index.js"></script>
   </head>
 
   <body>
@@ -19,6 +18,7 @@
                 <div id="content" class="col70">
                     <div id="barraOpciones"></div>
                     <div id="peliculas" class="col100 mMarginTop">
+                        <input type="hidden" name="totalPeliculas" id="totalPeliculas" value="<%= totalPeliculas %>">
                         <% peliculas.forEach(function(peliculas) { %>
                             <div id="<%= peliculas._id %>" class="unaPelicula col30 mMarginRight" onclick="$(location).attr('href','/api/peliculas/ver/pelicula/<%= peliculas._id %>');">
                                 <div class="col100 fondoPelicula">
@@ -42,7 +42,12 @@
                             </div>
                         <% }); %>
                     </div>
-                    
+                    <div class="col100">
+                        <p id="pagPrimera" class="col5" onclick="$(location).attr('href', ('/api/peliculas/'));" >Inicio</p>
+                        <p id="pagAnterior" class="col8 sMarginLeft" onclick="anterior()" >Anterior</p>
+                        <p id="pagSigiente" class="col8" onclick="siguiente()" >Siguiente</p>
+                        <p id="pagUltima" class="col8" onclick="pagFinal()" >Final</p>
+                    </div>
                 </div>
                 <div id="btnNewform" class="col8 right xlMarginTop">
                     <button class="btn-success round col100 centerVH" onclick="$(location).attr('href','/api/peliculas/add');">
@@ -58,3 +63,10 @@
     </div>
   </body>
 </html>
+<script src="/js/index.js"></script>
+
+<style>
+    #content{
+        height: 103em;
+    }
+</style>

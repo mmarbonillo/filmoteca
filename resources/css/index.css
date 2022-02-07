@@ -6,9 +6,6 @@
     overflow: hidden;
     cursor: pointer;
 }
-.menuElement:hover {
-cursor: pointer;
-}
 button.round {
     height: 55px;
     width: 55px;

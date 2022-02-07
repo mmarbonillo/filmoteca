@@ -15,10 +15,14 @@ var genero = new Generos();
 ruta.get('/', verificarUsuario, (req, res) => {
     let resultado = peli.listarPeliculasActivas(1, 6);
     resultado.then(peliculas => {
-        res.render("index.ejs", { 
-            titulo: "Index EJS",
-            peliculas: peliculas
-        });
+        let totalPeliculas = peli.contarPeliculas();
+        totalPeliculas.then(total => {
+            res.render("index.ejs", { 
+                titulo: "Index EJS",
+                peliculas: peliculas,
+                totalPeliculas: total[0].totalPelis
+            });
+        })
     }).catch(err => {
         res.status(400).json(err);
     })
@@ -28,10 +32,14 @@ ruta.get('/', verificarUsuario, (req, res) => {
 ruta.get('/:numPage/:numFills', verificarUsuario, (req, res) => {
     let resultado = peli.listarPeliculasActivas(req.params.numPage, 6);
     resultado.then(peliculas => {
-        res.render("index.ejs", { 
-            titulo: "Index EJS",
-            peliculas: peliculas
-        });
+        let totalPeliculas = peli.contarPeliculas();
+        totalPeliculas.then(total => {
+            res.render("index.ejs", { 
+                titulo: "Index EJS",
+                peliculas: peliculas,
+                totalPeliculas: total[0].totalPelis
+            });
+        })
     }).catch(err => {
         res.status(400).json(err);
     })
@@ -62,7 +70,7 @@ ruta.post('/', verificarUsuario, (req, res) => {
 
 //GET de ver una película
 ruta.get('/ver/pelicula/:id', verificarUsuario, (req, res) => {
-    console.log('ver');
+    //console.log('ver');
     let resultado = peli.verPelicula(req.params.id);
     resultado.then(pelicula => {
         let generosPelicula = pelicula.etiquetas;

@@ -79,6 +79,11 @@ class Peliculas {
         }, {new: true});
         return pelicula;
     }
+
+    contarPeliculas(){
+        let totalPeliculas = Pelicula.aggregate([ { $group: { _id: null, totalPelis: { $sum: 1 } } }, { $project: { _id: 0 } } ]);
+        return totalPeliculas;
+    }
 }
 
 module.exports = Peliculas;
