@@ -1,0 +1,51 @@
+<html lang="es">
+    <head>
+      <%- include('../plantillas/head'); %>
+      <link rel="stylesheet" href="/css/index.css" />
+    </head>
+  
+    <body>
+  
+        <div class="centerH">
+            <div id="content" class="col70 bblack">
+    <!--------------------------------- CABECERA ------------------------------>
+                <%- include('../plantillas/header'); %>
+    <!--------------------------------- CUERPO -------------------------------->
+                <div id="body" class="col100">
+        <!--------------------------------- MENÚ ---------------------------------->
+                    <%- include('../plantillas/menu'); %>
+        <!--------------------------------- CONTENIDO ----------------------------->
+                    <div id="content" class="col80">
+                        <div id="barraOpciones"></div>
+                        <div id="peliculas" class="col100 mMarginTop">
+                            <% peliculas.forEach(function(peliculas) { %>
+                                <div id="<%= peliculas._id %>" class="unaPelicula col30 mMarginRight" onclick="$(location).attr('href','/api/peliculas/ver/pelicula/<%= peliculas._id %>');">
+                                    <div class="col100 fondoPelicula">
+                                        <div class="valoracionPelicula" class="col100">
+                                            <% for(var i = 1; i <= 5; i++) { %>
+                                                <% if(i <= peliculas.valoracion ) { %>
+                                                    <img src="/img/estrellaAmarilla.svg" alt="" class="col10 sMarginRight">
+                                                <% } else{ %>
+                                                    <img src="/img/estrellaBlanca.svg" alt="" class="col10 sMarginRight">
+                                                <% } %>
+                                            <% } %>
+                                        </div>
+                                        <div class="imgPelicula col100">
+                                            <img src="/img/peliculas/<%= peliculas.imagen %>" alt="" class=" jpgPelicula col100">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="infoPelicula">
+                                        <p><%= peliculas.titulo %></p>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>

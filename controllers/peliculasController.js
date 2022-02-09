@@ -4,6 +4,7 @@ const Pelicula = require('../models/peliculasModel');
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
 const express = require('express');
+const { Console } = require('console');
 const app = express();
 app.use(fileUpload())
 
@@ -83,6 +84,17 @@ class Peliculas {
     contarPeliculas(){
         let totalPeliculas = Pelicula.aggregate([ { $group: { _id: null, totalPelis: { $sum: 1 } } }, { $project: { _id: 0 } } ]);
         return totalPeliculas;
+    }
+
+    mediaValoracion(){
+        let medias = Pelicula.aggregate([ {$unwind: "$etiquetas" }, { $group: { _id: "$etiquetas", media: { $avg: "$valoracion" } } } ]);
+        return medias;
+    }
+
+    getPeliculasPorGenero(genero){
+        console.log(genero)
+        let peliculas = Pelicula.find({etiquetas: {$all: genero} });
+        return peliculas;
     }
 }
 

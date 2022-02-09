@@ -21,7 +21,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname + '\\resources'));
 console.log("dirname:" + __dirname);
 app.use(fileUpload())
-console.log(__dirname + '\\resources');
 app.set("view engine", "ejs");
 app.set("views, ./views");
 app.set("resources/img, ./resources/img/");

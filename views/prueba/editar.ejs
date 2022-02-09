@@ -1,0 +1,46 @@
+<html lang="es">
+    <head>
+      <%- include('../plantillas/head'); %>
+      <link rel="stylesheet" href="/css/index.css" />
+    </head>
+  
+    <body>
+  
+        <div class="centerH">
+            <div id="content" class="col70 bblack">
+    <!--------------------------------- CABECERA ------------------------------>
+                <%- include('../plantillas/header'); %>
+    <!--------------------------------- CUERPO -------------------------------->
+                <div id="body" class="col100">
+        <!--------------------------------- MENÚ ---------------------------------->
+                    <%- include('../plantillas/menu'); %>
+        <!--------------------------------- CONTENIDO ----------------------------->
+                    <div id="content" class="col70">
+                        <div id="barraOpciones"></div>
+                        <form action="/api/usuarios/update/<%=usuario._id%>" method="post" enctype="multipart/form-data">
+                            <div class="col100 lMarginTop">
+                                <div class="col100">
+                                    <label for="nombreUsuario">Nombre de usuario</label>
+                                </div>
+                                <div class="col100 mPaddingLeft">
+                                    <input class="col25" type="text" name="nombreUsuario" id="nombreUsuario" value="<%= usuario.nombreUsuario %>">
+                                </div>
+                                <div class="col100 mMarginTop">
+                                    <label for="email">Email:</label>
+                                </div>
+                                <div class="col100 mPaddingLeft">
+                                    <input class="col25" type="text" name="email" id="email" value="<%= usuario.email %>">
+                                </div>
+                            </div>
+                            <div class="col100 mMarginTop">
+                                <button type="submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>

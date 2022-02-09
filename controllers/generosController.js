@@ -17,6 +17,11 @@ class Generos {
         let generos = Genero.find({"estado": true});
         return generos;
     }
+
+    getUnGenero(gen){
+        let genero = Genero.find({"nombre": gen});
+        return genero;
+    }
 }
 
 module.exports = Generos;

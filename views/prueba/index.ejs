@@ -1,0 +1,35 @@
+<html lang="es">
+    <head>
+      <%- include('../plantillas/head'); %>
+      <link rel="stylesheet" href="/css/index.css" />
+    </head>
+  
+    <body>
+  
+      <div class="centerH">
+          <div id="content" class="col70 bblack">
+  <!--------------------------------- CABECERA ------------------------------>
+              <%- include('../plantillas/header'); %>
+  <!--------------------------------- CUERPO -------------------------------->
+              <div id="body" class="col100">
+      <!--------------------------------- MENÚ ---------------------------------->
+                  <%- include('../plantillas/menu'); %>
+      <!--------------------------------- CONTENIDO ----------------------------->
+                  <div id="content" class="col70">
+                      <div id="barraOpciones"></div>
+                      <div class="col100 lMarginTop">
+                          <p class="col15">Nombre de usuario: </p>
+                          <p><%= usuario.nombreUsuario %></p>
+                          <p class="col15">Email: </p>
+                          <p><%= usuario.email %></p>
+                          <input type="button" onclick="$(location).attr('href', '/api/usuarios/editar/<%= usuario._id %>')" value="Modificar datos">
+                          <button>Modificar contraseña</button>
+                      </div>
+                  </div>
+                  
+              </div>
+              <div id="footer"></div>
+          </div>
+      </div>
+    </body>
+  </html>

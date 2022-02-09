@@ -82,7 +82,7 @@ ruta.get('/', (req, res) => {
 })
 
 ruta.post('/conectar', (req, res) => {
-    let resultado = user.getUsuario(req.body.emailLogin);
+    let resultado = user.getUsuarioByEmail(req.body.emailLogin);
     resultado.then(usuario => {
         console.log(usuario);
         

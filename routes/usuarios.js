@@ -3,6 +3,7 @@ const Usuarios = require('../models/usuarioModel');
 const Usuario = require('../controllers/usuariosController');
 const bcrypt = require('bcrypt');
 const Joi = require('@hapi/joi');
+const verificarUsuario = require('../middlewares/auth');
 const ruta = express.Router();
 
 const user = new Usuario();
@@ -23,17 +24,15 @@ const schema = Joi.object({
         .required()
 });
 
-ruta.get('/', (req, res) => {
-    let resultado = user.listarUsuarioActivos();
-    resultado.then(usuarios => {
-        res.json(usuarios)
-    }).catch(err => {
-        res.status(400).json(
-            {
-                err
-            }
-        )
+ruta.get('/', verificarUsuario, (req, res) => {
+    let resultado = user.recogerUsuarioLogin(req);
+    resultado.then(usuario => {
+        res.render("\prueba\\index.ejs", { 
+            titulo: "Usuario",
+            usuario: usuario
+        });
     })
+    
 });
 
 ruta.post('/', (req, res) => {
@@ -47,59 +46,26 @@ ruta.post('/', (req, res) => {
     })
 });
 
-ruta.put('/:email', (req, res) => {
-
-    const {error, value} = schema.validate({nombre: req.body.nombre});
-
-    if(!error){
-        let resultado = actualizarUsuario(req.params.email, req.body);
-        resultado.then(valor => {
-            res.json({
-                valor
-            })
-        }).catch(err => {
-            res.status(400).json({
-                err
-            })
+ruta.get('/editar/:id', verificarUsuario, (req, res) => {
+    let resultado = user.getUsuario(req.params.id);
+    resultado.then(usuario => {
+        res.render("\prueba\\editar.ejs", { 
+            titulo: "Usuario",
+            usuario: usuario
         });
-    }else{
-        console.log(value);
-    }
+    })
+});
 
+ruta.post('/update/:id', verificarUsuario, (req, res) => {
+    let resultado = user.actualizarUsuario(req.params.id, req.body);
+    resultado.then(usuario => {
+        res.render("\prueba\\index.ejs", { 
+            titulo: "Usuario",
+            usuario: usuario
+        });
+    })
     
 });
-
-ruta.delete('/:email', (req, res) => {
-    let resultado = desactivarUsuario(req.params.email);
-    resultado.then(valor => {
-        res.json({
-            usuario: valor
-        })
-    }).catch(err => {
-        res.status(400).json({
-            err
-        })
-    });
-});
-
-async function crearUsuario(body){
-    let usuario = new Usuario({
-        email       : body.email,
-        nombre      : body.nombre,
-        password    : bcrypt.hashSync(body.password) //encriptar password
-    });
-    return await usuario.save();
-}
-
-async function actualizarUsuario(email, body){
-    let usuario = await Usuario.findOneAndUpdate({"email": email}, {
-        $set: {
-            nombre: body.nombre,
-            password: body.password
-        }
-    }, {new: true});
-    return usuario;
-}
 
 async function desactivarUsuario(email){
     let usuario = await Usuario.findOneAndUpdate({"email": email}, {

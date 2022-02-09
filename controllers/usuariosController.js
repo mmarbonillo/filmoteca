@@ -53,14 +53,44 @@ class Usuarios {
         return resultado;
     }
 
-    getUsuario(email){
+    getUsuarioByEmail(email){
         let usuario = Usuario.find({ 'email': email });
         return usuario;
+    }
+
+    getUsuario(id){
+        let usuario = Usuario.findById(id);
+        return usuario;
+    }
+
+    actualizarUsuario(id, body){
+        let usuario  = Usuario.findByIdAndUpdate(id, {
+            $set: {
+                nombreUsuario: body.nombreUsuario,
+                email: body.email
+            }
+        }, {new: true});
+        return usuario;
+    }
+
+    modificarContraseña(id, pass){
+        
     }
 
     listarUsuarioActivos(){
         let usuarios = Usuario.find({"estado": true});
         return usuarios;
+    }
+
+    recogerUsuarioLogin(req){
+        var token = (req.headers.cookie).split('=')[1];
+        var infoUsuario = token.split('.')[1];
+        var decode = Buffer.from(infoUsuario, 'base64');
+        var datos = decode.toString('utf-8');
+        console.log(datos.split('"')[5]);
+        var id = datos.split('"')[5];
+        var usuario = Usuario.findById(id);
+        return usuario;
     }
     
 }

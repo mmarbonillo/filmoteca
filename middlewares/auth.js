@@ -17,7 +17,6 @@ let verificarUsuario = (req, res, next) => {
     }else{
         res.redirect('/api/login');
     }
-    
 }
 
 module.exports = verificarUsuario;

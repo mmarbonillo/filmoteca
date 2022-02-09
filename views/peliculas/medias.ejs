@@ -1,0 +1,46 @@
+<html lang="es">
+    <head>
+      <%- include('../plantillas/head'); %>
+      <link rel="stylesheet" href="/css/index.css" />
+    </head>
+  
+    <body>
+  
+        <div class="centerH">
+            <div id="content" class="col70 bblack">
+    <!--------------------------------- CABECERA ------------------------------>
+                <%- include('../plantillas/header'); %>
+    <!--------------------------------- CUERPO -------------------------------->
+                <div id="body" class="col100">
+        <!--------------------------------- MENÚ ---------------------------------->
+                    <%- include('../plantillas/menu'); %>
+        <!--------------------------------- CONTENIDO ----------------------------->
+                    <div id="content" class="col80">
+                        <div id="barraOpciones"></div>
+                        <div id="medias" class="col100 mMarginTop">
+                            <% for(var i = 0; i < mediasGeneros.length; i++) { %>
+                                <div id="<%= nombresGeneros[i] %>" class="col25">
+                                    <div class="col45">
+                                        <p class="right enlace" onclick="$(location).attr('href', '/api/peliculas/genero/buscar/<%= nombresGeneros[i] %>')"><%= nombresGeneros[i] %>: </p>
+                                    </div>
+                                    <div class="col45 mMarginLeft">
+                                        <p><%= mediasGeneros[i] %></p>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    .enlace{
+        color: blue;
+        text-decoration: underline;
+    }
+</style>

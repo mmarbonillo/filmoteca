@@ -1,24 +1,49 @@
-<div id="menu" class="col20">
+<div id="menu" class="col15">
     <div id="menuPeliculas" class="col100 sMarginTop">
         <div id="menuPeliculasCapa1" class="col100">
-            <div class="col10 mMarginLeft sMarginTop">
-                <img src="/img/17343587831556273568.svg" alt="">
+            <div class="col10 mMarginLeft xsMarginTop">
+                <img id="desplegable" class="cerrado" src="/img/20040147701530177260.svg" alt="">
             </div>
             <div class="col80 xsMarginTop">
                 <p class="menuElement col30" onclick="$(location).attr('href','/api/peliculas');">Películas</p>
+            </div>
+            <div class="col100">
+                <p id="medias" class="xxlMarginLeft hidden col55">Medias de puntuación</p>
             </div>
         </div>
         <div id="menuPeliculasCapa2" class="col100">
 
         </div>
     </div>
-    <div id="menuSeries" class="col100">
-        <p class="menuElement">Series</p>
-    </div>
 </div>
 
 <style>
-    .menuElement:hover {
+    .menuElement:hover, #medias:hover, #desplegable {
         cursor: pointer;
     }
 </style>
+
+<script>
+    $('#desplegable').on({
+        click: function(){
+            if($(this).hasClass('cerrado')){
+                $('#medias').slideDown(600);
+                $(this).attr('src', '/img/5574364371530177260.svg');
+                $(this).removeClass('cerrado');
+                $(this).addClass('abierto');
+            }else{
+                $('#medias').slideUp(600);
+                $(this).attr('src', '/img/20040147701530177260.svg');
+                $(this).removeClass('abierto');
+                $(this).addClass('cerrado');
+            }
+            
+        }
+    });
+
+    $('#medias').on({
+        click: function(){
+            $(location).attr('href', '/api/peliculas/medias')
+        }
+    })
+</script>
