@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "61fed5f83fd17a9d441a7e88"
+  },
+  "email": "maria@gmail.com",
+  "nombreUsuario": "mmarbonillo",
+  "password": "$2b$10$/yWOySx8o4FdBZEK04e3qeY9Fi5BfH.DvjcV8WgN1AALY3B612fXO",
+  "estado": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61feeb438841ed2714275a72"
+  },
+  "email": "carisilverioacosta@gmail.com",
+  "nombreUsuario": "mbonillo95",
+  "password": "$2b$10$pim/Mfy0lhydfJyrbbU.DeVjakeapQDL3g0W28TW1B5/8jWAkTU2e",
+  "estado": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ffb991df1f270d31dfc3fd"
+  },
+  "email": "maria95@gmail.com",
+  "nombreUsuario": "mbonillo",
+  "password": "$2b$10$92RaPouE0.SgL1S6DQWmp.Zwn40WEqeUKMphH5TRXogLBgmIn1GBi",
+  "estado": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6204342309465a09cbe09268"
+  },
+  "email": "usuario@gmail.com",
+  "nombreUsuario": "usuario",
+  "password": "$2b$10$wBLeWSWL13otljZbW/3J6uY7KjgVSvJ5h2asFtX77A.syGXfP7ZjS",
+  "estado": true,
+  "__v": 0
+}]

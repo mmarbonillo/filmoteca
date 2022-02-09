@@ -35,6 +35,9 @@ ruta.get('/', verificarUsuario, (req, res) => {
     
 });
 
+/**
+ * CONFIRMAR USUARIO CREADO CORRECTAMENTE
+ */
 ruta.post('/', (req, res) => {
     let resultado = user.addUsuario(req.body);
     resultado.then(usuario => {
@@ -46,6 +49,9 @@ ruta.post('/', (req, res) => {
     })
 });
 
+/**
+ * VISTA DE EDITAR USUARIO
+ */
 ruta.get('/editar/:id', verificarUsuario, (req, res) => {
     let resultado = user.getUsuario(req.params.id);
     resultado.then(usuario => {
@@ -55,7 +61,11 @@ ruta.get('/editar/:id', verificarUsuario, (req, res) => {
         });
     })
 });
- 
+
+/**
+ * GUARDAR DATOS DE USUARIO ACTUALIZADO
+ * No he conseguido usar PUT, PATCH Y DELETE como métodos de formularios, siempre me daba 404
+ */
 ruta.post('/update/:id', verificarUsuario, (req, res) => {
     let resultado = user.actualizarUsuario(req.params.id, req.body);
     resultado.then(usuario => {
@@ -67,6 +77,9 @@ ruta.post('/update/:id', verificarUsuario, (req, res) => {
     
 });
 
+/**
+ * VISTA DE MODIFICAR CONTRASEÑA
+ */
 ruta.get('/modificarPass/:id', verificarUsuario, (req, res) => {
     let resultado = user.getUsuario(req.params.id);
     resultado.then(usuario => {
@@ -77,6 +90,9 @@ ruta.get('/modificarPass/:id', verificarUsuario, (req, res) => {
     })
 });
 
+/**
+ * GUARDAR CONTRASEÑA YA ACTUALIZADA
+ */
 ruta.post('/update/pass/:id', verificarUsuario, (req, res) => {
     let resultado = user.modificarContraseña(req.params.id, req.body.passNueva);
     resultado.then(usuario => {
@@ -87,14 +103,5 @@ ruta.post('/update/pass/:id', verificarUsuario, (req, res) => {
     })
     
 });
-
-async function desactivarUsuario(email){
-    let usuario = await Usuario.findOneAndUpdate({"email": email}, {
-        $set: {
-            estado: false
-        }
-    }, {new: true});
-    return usuario;
-}
 
 module.exports = ruta;

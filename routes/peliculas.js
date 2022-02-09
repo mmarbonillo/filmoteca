@@ -151,6 +151,10 @@ ruta.post('/editar/pelicula/:id', verificarUsuario, (req, res) => {
     })
 });
 
+/**
+ * ELIMINAR PELICULA
+ * Solo la desactiva para tener un histórico en la BBDD
+ */
 ruta.post('/delete/pelicula/:id', verificarUsuario, (req, res) => {
     let resultado = peli.desactivarPelicula(req.params.id);
     resultado.then(pelicula => {
@@ -160,6 +164,9 @@ ruta.post('/delete/pelicula/:id', verificarUsuario, (req, res) => {
     })
 });
 
+/**
+ * RUTA PARA SACAR LAS MEDIAS DE PUNTUACIÓN DE PELÍCULAS SEGÚN SU GÉNERO
+ */
 ruta.get('/medias', verificarUsuario, (req, res) => {
     console.log("medias");
     let resultado = peli.mediaValoracion()
@@ -188,6 +195,9 @@ ruta.get('/medias', verificarUsuario, (req, res) => {
     })
 });
 
+/**
+ * FILTRAR Y MOSTRAR PELÍCULAS POR GÉNERO
+ */
 ruta.get('/genero/buscar/:gen', verificarUsuario, (req, res) => {
     let resultado = genero.getUnGenero(req.params.gen);
     resultado.then(genero =>{

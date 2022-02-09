@@ -1,68 +1,151 @@
-[
-	{
-		"nombre": "animación"
-	},
-	{
-		"nombre": "aventura"
-	},
-	{
-		"nombre": "comedia"
-	},
-	{
-		"nombre": "drama"
-	},
-	{
-		"nombre": "romace"
-	},
-	{
-		"nombre": "familiar"
-	},
-	{
-		"nombre": "infantil"
-	},
-	{
-		"nombre": "II Guerra Mundial"
-	},
-	{
-		"nombre": "nazismo"
-	},
-	{
-		"nombre": "holocausto"
-	},
-	{
-		"nombre": "música"
-	},
-	{
-		"nombre": "biográfico"
-	},
-	{
-		"nombre": "histórico"
-	},
-	{
-		"nombre": "terror"
-	},
-	{
-		"nombre": "musical"
-	},
-	{
-		"nombre": "culto"
-	},
-	{
-		"nombre": "thriller"
-	},
-	{
-		"nombre": "hechos reales"
-	},
-	{
-		"nombre": "superhéroes"
-	},
-	{
-		"nombre": "cómic"
-	},
-	{
-		"nombre": "fantasía"
-	},
-	{
-		"nombre": "ciencia ficción"
-	}
-]
+[{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa83"
+  },
+  "nombre": "animación",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa84"
+  },
+  "nombre": "aventura",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa85"
+  },
+  "nombre": "comedia",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa86"
+  },
+  "nombre": "drama",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa87"
+  },
+  "nombre": "romace",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa88"
+  },
+  "nombre": "familiar",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa89"
+  },
+  "nombre": "infantil",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa8a"
+  },
+  "nombre": "II Guerra Mundial",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa8b"
+  },
+  "nombre": "nazismo",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa8c"
+  },
+  "nombre": "holocausto",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa8d"
+  },
+  "nombre": "música",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa8e"
+  },
+  "nombre": "biográfico",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa8f"
+  },
+  "nombre": "histórico",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa90"
+  },
+  "nombre": "terror",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa91"
+  },
+  "nombre": "musical",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa92"
+  },
+  "nombre": "culto",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa93"
+  },
+  "nombre": "thriller",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa94"
+  },
+  "nombre": "hechos reales",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa95"
+  },
+  "nombre": "superhéroes",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97664c41786295d07fa96"
+  },
+  "nombre": "cómic",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f9780ac41786295d07fa9c"
+  },
+  "nombre": "fantasía",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f97834c41786295d07fa9d"
+  },
+  "nombre": "acción",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f9788ec41786295d07fa9e"
+  },
+  "nombre": "ciencia ficción",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f978aec41786295d07fa9f"
+  },
+  "nombre": "crimen",
+  "estado": true
+},{
+  "_id": {
+    "$oid": "61f978e7c41786295d07faa0"
+  },
+  "nombre": "baile",
+  "estado": true
+}]

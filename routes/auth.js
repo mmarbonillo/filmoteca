@@ -41,6 +41,9 @@ ruta.post('/comprobar', (req, res) => {
     })
 });
 
+/**
+ * COMPROBAR LA CONTRASEÑA PARA HACER EL LOGIN
+ */
 ruta.post('/comprobarPass', (req, res) => {
     let resultado = user.comprobarPass(req.body.email, req.body.password);
     resultado.then(datos => {
@@ -57,6 +60,9 @@ ruta.post('/comprobarPass', (req, res) => {
     })
 });
 
+/**
+ * VALIDAR DATOS CON EL SCHEMA Y COMPROBAR QUE LAS CONTRASEÑAS COINCIDEN
+ */
 ruta.post('/validar', (req, res) => {
     const {error, value} = schema.validate({
         nombre: req.body.nombreUsuario,
@@ -73,12 +79,18 @@ ruta.post('/validar', (req, res) => {
     }
 });
 
+/**
+ * PÁGINA DE LOGIN
+ */
 ruta.get('/', (req, res) => {
     res.render("\auth\\login.ejs", { 
         titulo: "Index EJS"
     });
-})
+});
 
+/**
+ * MODIFICAR CONTRASEÑA -> COMPROBAR QUE LA CONTRASEÑA INTRODUCIDA COINCIDE CON LA ACTUAL PARA DEJARLE ACTUALIZAR LA
+ */
 ruta.post('/comprobarPassActual', (req, res) => {
     let resultado = user.getUsuario(req.body.id);
     resultado.then(datos => {

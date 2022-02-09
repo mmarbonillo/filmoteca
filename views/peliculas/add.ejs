@@ -1,6 +1,7 @@
 <html lang="es">
   <head>
     <%- include('../plantillas/head'); %>
+    <link rel="stylesheet" href="../../css/peliculas/add.css" />
   </head>
 
   <body>
@@ -53,46 +54,7 @@
             <div id="footer"></div>
         </div>
     </div>
-
-    
   </body>
-  <style>
-    .menuElement:hover {
-    cursor: pointer;
-    }
-    button.round {
-        height: 55px;
-        width: 55px;
-        border-radius: 50px;
-    }
-    #allForms {
-        margin-top: -7%;
-    }
-  </style>
-    <script>
-        function addPelicula(){
-            $.ajax({
-            url: '/api/peliculas',
-            type: 'POST',
-            data: {
-                //"_token": token,
-                "titulo": $("#titulo").val(),
-                "anyo": $("#anyo").val(),
-                "valoracion": $("#valoracion").val(),
-                "etiquetas": $("#etiquetas").val(),
-                "descripcion": $("#descripcion").val(),
-                "imagen": $("#imagen").attr("src")
-            },
-            success:function(result){
-                if(result["status"]){
-                    alert("Película añadida");
-                }
-            }
-            });
-        }
-
-        function index(){
-            $(location).attr('href', '/api/peliculas');
-        }
-    </script>
 </html>
+
+<script src="../../js/peliculas/add.js"></script>

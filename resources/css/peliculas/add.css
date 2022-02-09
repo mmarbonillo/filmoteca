@@ -1,0 +1,11 @@
+.menuElement:hover {
+    cursor: pointer;
+}
+button.round {
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+}
+#allForms {
+    margin-top: -7%;
+}

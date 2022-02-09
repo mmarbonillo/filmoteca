@@ -99,10 +99,3 @@ class Peliculas {
 }
 
 module.exports = Peliculas;
-
-/*module.exports = {
-    listarPeliculasActivas: listarPeliculasActivas,
-    crearPelicula: crearPelicula,
-    actualizarPelicula: actualizarPelicula,
-    desactivarPelicula: desactivarPelicula
-}*/

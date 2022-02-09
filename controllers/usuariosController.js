@@ -26,7 +26,7 @@ const schema = Joi.object({
 class Usuarios {
 
     constructor(){}
-//{ $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] }
+    
     comprobarUsuarioExiste(email, nombreUsuario){
         let usuario = Usuario.find({ $or: [{ 'email': email}, {'nombreUsuario': nombreUsuario }] });
         return usuario;
