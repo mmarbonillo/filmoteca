@@ -44,8 +44,6 @@ ruta.post('/comprobar', (req, res) => {
 ruta.post('/comprobarPass', (req, res) => {
     let resultado = user.comprobarPass(req.body.email, req.body.password);
     resultado.then(datos => {
-        //console.log(datos[0].password);
-        //console.log(req.body.password);
         let compara = bcrypt.compareSync(req.body.password, datos[0].password);
         if(compara){
             let usuario = datos[0];
@@ -81,11 +79,19 @@ ruta.get('/', (req, res) => {
     });
 })
 
-ruta.post('/conectar', (req, res) => {
-    let resultado = user.getUsuarioByEmail(req.body.emailLogin);
-    resultado.then(usuario => {
-        console.log(usuario);
-        
+ruta.post('/comprobarPassActual', (req, res) => {
+    let resultado = user.getUsuario(req.body.id);
+    resultado.then(datos => {
+        let compara = bcrypt.compareSync(req.body.password, datos.password);
+        if(compara){
+            let usuario = datos;
+            const jwToken = jwt.sign({
+                usuario: {_id: usuario._id, nombre: usuario.nombreUsuario, email: usuario.email}
+                }, config.get('configToken.SEED'), { expiresIn: config.get('configToken.expiration') });
+            res.send(true)
+        }else{
+            res.send(false);
+        }
     })
 });
 

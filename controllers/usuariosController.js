@@ -64,6 +64,10 @@ class Usuarios {
     }
 
     actualizarUsuario(id, body){
+        const {error, value} = schema.validate({
+            nombre: body.nombreUsuario,
+            email: body.email
+        });
         let usuario  = Usuario.findByIdAndUpdate(id, {
             $set: {
                 nombreUsuario: body.nombreUsuario,
@@ -74,7 +78,15 @@ class Usuarios {
     }
 
     modificarContraseña(id, pass){
-        
+        const {error, value} = schema.validate({
+            password: pass
+        });
+        let usuario  = Usuario.findByIdAndUpdate(id, {
+            $set: {
+                password: bcrypt.hashSync(pass, 10)
+            }
+        }, {new: true});
+        return usuario;
     }
 
     listarUsuarioActivos(){

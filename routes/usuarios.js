@@ -55,9 +55,30 @@ ruta.get('/editar/:id', verificarUsuario, (req, res) => {
         });
     })
 });
-
+ 
 ruta.post('/update/:id', verificarUsuario, (req, res) => {
     let resultado = user.actualizarUsuario(req.params.id, req.body);
+    resultado.then(usuario => {
+        res.render("\prueba\\index.ejs", { 
+            titulo: "Usuario",
+            usuario: usuario
+        });
+    })
+    
+});
+
+ruta.get('/modificarPass/:id', verificarUsuario, (req, res) => {
+    let resultado = user.getUsuario(req.params.id);
+    resultado.then(usuario => {
+        res.render("\prueba\\modificarPass.ejs", { 
+            titulo: "Usuario",
+            usuario: usuario
+        });
+    })
+});
+
+ruta.post('/update/pass/:id', verificarUsuario, (req, res) => {
+    let resultado = user.modificarContraseña(req.params.id, req.body.passNueva);
     resultado.then(usuario => {
         res.render("\prueba\\index.ejs", { 
             titulo: "Usuario",

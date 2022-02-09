@@ -1,0 +1,82 @@
+<html lang="es">
+    <head>
+      <%- include('../plantillas/head'); %>
+      <link rel="stylesheet" href="/css/index.css" />
+    </head>
+  
+    <body>
+  
+        <div class="centerH">
+            <div id="content" class="col70 bblack">
+    <!--------------------------------- CABECERA ------------------------------>
+                <%- include('../plantillas/header'); %>
+    <!--------------------------------- CUERPO -------------------------------->
+                <div id="body" class="col100">
+        <!--------------------------------- MENÚ ---------------------------------->
+                    <%- include('../plantillas/menu'); %>
+        <!--------------------------------- CONTENIDO ----------------------------->
+                    <div id="content" class="col70">
+                        <div id="barraOpciones"></div>
+                        <form action="/api/usuarios/update/pass/<%=usuario._id%>" method="post" enctype="multipart/form-data">
+                            <input type="hidden" id="idUsuario" value="<%=usuario._id%>">
+                            <div class="col100 lMarginTop">
+                                <div class="col100">
+                                    <label for="passActual">Contraseña Actual</label>
+                                </div>
+                                <div class="col100 mPaddingLeft">
+                                    <input class="col25" type="text" name="passActual" id="passActual">
+                                </div>
+                                <div class="col100 mMarginTop">
+                                    <label for="passNueva">Contraseña Nueva</label>
+                                </div>
+                                <div class="col100 mPaddingLeft">
+                                    <input class="col25" type="text" name="passNueva" id="passNueva">
+                                </div>
+                                <div class="col100 mMarginTop">
+                                    <label for="passNuevaConfirmar">Confirmar Contraseña</label>
+                                </div>
+                                <div class="col100 mPaddingLeft">
+                                    <input class="col25" type="text" name="passNuevaConfirmar" id="passNuevaConfirmar">
+                                </div>
+                            </div>
+                            <button id="botonGuardar" type="submit" class="hidden"></button>
+                        </form>
+                        <div class="col100">
+                            <input type="button" value="Guardar" onclick="comprobarPassword()">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function comprobarPassword(){
+        $.ajax({
+            url: '/api/login/comprobarPassActual',
+            type: 'POST',
+            data: {
+            'id': $('#idUsuario').val(),
+            'password': $('#passActual').val()
+        },
+        success:function(result){
+            console.log(result);
+            if(result){
+                if($('#passNueva').val() == $('#passNuevaConfirmar').val()){
+                    $('#botonGuardar').click();
+                }else{
+                    alert('Las contraseñas no coinciden');
+                }
+            }else{
+                alert('La contraseña introducida no es la actual');
+            }
+        },
+        error:function(err) {
+            //alert('error ajax');
+        }
+        });
+    }
+</script>

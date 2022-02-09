@@ -23,7 +23,7 @@
                           <p class="col15">Email: </p>
                           <p><%= usuario.email %></p>
                           <input type="button" onclick="$(location).attr('href', '/api/usuarios/editar/<%= usuario._id %>')" value="Modificar datos">
-                          <button>Modificar contraseña</button>
+                          <input type="button" onclick="$(location).attr('href', '/api/usuarios/modificarPass/<%= usuario._id %>')" value="Modificar Contraseña">
                       </div>
                   </div>
                   
