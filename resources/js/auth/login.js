@@ -31,7 +31,6 @@ function comprobarPassword(email, pass){
         'password': pass
     },
     success:function(result){
-        //console.log(result);
         if(!result){
             alert('Usuario o contraseña incorrectos');
         }else{

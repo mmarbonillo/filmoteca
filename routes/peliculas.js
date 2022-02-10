@@ -13,7 +13,6 @@ var genero = new Generos();
 
 //Index de películas. Lista las películas
 ruta.get('/', verificarUsuario, (req, res) => {
-    console.log("index")
     let resultado = peli.listarPeliculasActivas(1, 6);
     resultado.then(peliculas => {
         let totalPeliculas = peli.contarPeliculas();
@@ -66,8 +65,6 @@ ruta.get('/add', verificarUsuario, (req, res) => {
 * index de películas por POST. Crea una película
 */
 ruta.post('/', verificarUsuario, (req, res) => {
-    console.log(req.body);
-    console.log(req.files);
     let resultado = peli.crearPelicula(req.body, req.files);
     resultado.then(peliculas => {
         let generos = genero.getGeneros();
@@ -86,8 +83,6 @@ ruta.post('/', verificarUsuario, (req, res) => {
 
 //GET de ver una película
 ruta.get('/ver/pelicula/:id', verificarUsuario, (req, res) => {
-    console.log("verPeli");
-    //console.log('ver');
     let resultado = peli.verPelicula(req.params.id);
     resultado.then(pelicula => {
         let generosPelicula = pelicula.etiquetas;
@@ -137,7 +132,6 @@ ruta.get('/editar/pelicula/:id', verificarUsuario, (req, res) => {
 
 /* ACTUALIZAR PELICULA */
 ruta.post('/editar/pelicula/:id', verificarUsuario, (req, res) => {
-    console.log("editar");
     let resultado = peli.actualizarPelicula(req.params.id, req.body, req.files);
     resultado.then(pelicula => {
         let generosPelicula = pelicula.etiquetas;
@@ -177,7 +171,6 @@ ruta.post('/delete/pelicula/:id', verificarUsuario, (req, res) => {
  * RUTA PARA SACAR LAS MEDIAS DE PUNTUACIÓN DE PELÍCULAS SEGÚN SU GÉNERO
  */
 ruta.get('/medias', verificarUsuario, (req, res) => {
-    console.log("medias");
     let resultado = peli.mediaValoracion()
     //Recojo las medias
     resultado.then(medias => {
@@ -212,7 +205,6 @@ ruta.get('/genero/buscar/:gen', verificarUsuario, (req, res) => {
     resultado.then(genero =>{
         let peliculas = peli.getPeliculasPorGenero((genero[0]._id).toHexString());
         peliculas.then(pelis =>{
-            console.log(pelis);
             res.render("\peliculas\\generos.ejs", { 
                 titulo: "Index EJS",
                 peliculas: pelis

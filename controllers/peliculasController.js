@@ -91,7 +91,6 @@ class Peliculas {
     }
 
     getPeliculasPorGenero(genero){
-        console.log(genero)
         let peliculas = Pelicula.find({etiquetas: {$all: genero} });
         return peliculas;
     }

@@ -21,8 +21,6 @@ function anterior(){
     var pathname = $(location).attr('pathname').split('/');
     var inicio = parseInt(pathname[3]);
     var numPelis = parseInt(pathname[4]);
-    console.log("Inicio -> " + inicio);
-    console.log("NumPelis -> " + numPelis);
     //alert(pathname.length);
     if((inicio != 1 || isNaN(inicio)) && pathname.length > 3){ 
         $(location).attr('href', ('/api/peliculas/' + (inicio - 6) + '/' + numPelis));

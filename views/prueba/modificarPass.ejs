@@ -63,7 +63,6 @@
             'password': $('#passActual').val()
         },
         success:function(result){
-            console.log(result);
             if(result){
                 if($('#passNueva').val() == $('#passNuevaConfirmar').val()){
                     $('#botonGuardar').click();

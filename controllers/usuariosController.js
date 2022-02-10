@@ -49,7 +49,6 @@ class Usuarios {
             password        : bcrypt.hashSync(body.password, 10) //encriptar password
         });
         let resultado = usuario.save();
-        //console.log(resultado);
         return resultado;
     }
 
@@ -99,7 +98,6 @@ class Usuarios {
         var infoUsuario = token.split('.')[1];
         var decode = Buffer.from(infoUsuario, 'base64');
         var datos = decode.toString('utf-8');
-        console.log(datos.split('"')[5]);
         var id = datos.split('"')[5];
         var usuario = Usuario.findById(id);
         return usuario;
