@@ -36,11 +36,10 @@ class Peliculas {
         })
         let pelicula = new Pelicula({
             titulo       : body.titulo,
-            descripcion  : body.desc,
+            descripcion  : body.descripcion,
             anyo         : body.anyo,
             valoracion   : body.valoracion,
-            etiquetas    : body.etiquetas,
-            estado       : body.estado,
+            etiquetas    : body.unGenero,
             imagen       : nombreImagen
         });
         let resultado = pelicula.save();

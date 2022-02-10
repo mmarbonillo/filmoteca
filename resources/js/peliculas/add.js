@@ -1,16 +1,11 @@
 
 function addPelicula(){
+    var formData = new FormData($("#formulario")[0]);
     $.ajax({
     url: '/api/peliculas',
     type: 'POST',
     data: {
-        //"_token": token,
-        "titulo": $("#titulo").val(),
-        "anyo": $("#anyo").val(),
-        "valoracion": $("#valoracion").val(),
-        "etiquetas": $("#etiquetas").val(),
-        "descripcion": $("#descripcion").val(),
-        "imagen": $("#imagen").attr("src")
+        formData
     },
     success:function(result){
         if(result["status"]){

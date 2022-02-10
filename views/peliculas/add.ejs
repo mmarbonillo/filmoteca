@@ -24,30 +24,33 @@
                             </svg>
                         </button>
                     </div>
-                    <div id="allForms" class="col100">
-                        <form class="col50" action="/api/peliculas" method="POST" enctype="multipart/form-data">
+                    <div class="col80">
+                        <form action="/api/peliculas" method="post" enctype="multipart/form-data">
                             <label for="titulo" class="col100 mMarginTop">Título</label>
-                            <input type="text" name="titulo" id="titulo" class="col90 mMarginLeft" required><br><br>
+                            <input type="text" name="titulo" id="titulo" class="col50 mMarginLeft" required><br><br>
 
                             <label for="imagen" class="col100 mMarginTop">Imagen</label><br><br>
-                            <input id="imagen" type="file" name="imagen" class="col90 mMarginLeft"><br>
-    
+                            <input id="imagen" type="file" name="imagen" class="col50 mMarginLeft"><br>
+
                             <label for="anyo" class="col100 mMarginTop">Año</label>
-                            <input id="anyo" type="number" name="anyo" class="col90 mMarginLeft" required><br><br>
-    
+                            <input id="anyo" type="number" name="anyo" class="col50 mMarginLeft" required><br><br>
+
                             <label for="valoracion" class="col100 mMarginTop">Valoración</label>
-                            <input type="number" name="valoracion" id="valoracion" class="col90 mMarginLeft" required><br><br>
-    
-                            <label for="etiquetas" class="col100 mMarginTop">Etiquetas</label>
-                            <input type="text" name="etiquetas" id="etiquetas" class="col90 mMarginLeft" required><br><br>
-    
+                            <input type="number" name="valoracion" id="valoracion" class="col50 mMarginLeft" required><br><br>
+                            <div class="clear"></div>
+                            <label for="generos" class="col100 mMarginTop">Géneros</label>
+                            <% for(var i = 0; i < listaGeneros.length; i++) { %>
+                                <div class="col23">
+                                    <input class="col20 sMarginTop" type="checkbox" name="unGenero" value="<%= listaGeneros[i]._id%>"> <p class="col80"><%= listaGeneros[i].nombre %></p>
+                                </div>
+                            <% } %>
+
                             <label for="descripcion" class="col100 mMarginTop">Descripción</label>
-                            <textarea id="descripcion" class="col90 mMarginLeft" name="descripcion" cols="30" rows="2"></textarea><br><br>
-                            <button type="submit" class="clear">Enviar</button>
+                            <textarea id="descripcion" class="col50 mMarginLeft" name="descripcion" cols="30" rows="2"></textarea><br><br>
+                            <div class="col100 mMarginTop">
+                                <button type="submit">Enviar</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="col100">
-                        
                     </div>
                 </div>
             </div>
@@ -56,5 +59,3 @@
     </div>
   </body>
 </html>
-
-<script src="../../js/peliculas/add.js"></script>

@@ -53,19 +53,29 @@ ruta.get('/:numPage/:numFills', verificarUsuario, (req, res) => {
 
 //GET de añadir pelicula. Muestra el formulario para añadir una película nueva
 ruta.get('/add', verificarUsuario, (req, res) => {
-    res.render("\peliculas\\add.ejs", { 
-        titulo: "Añadir Película"
-    });
+    let resultado = genero.getGeneros();
+    resultado.then(generos => {
+        res.render("\peliculas\\add.ejs", { 
+            titulo: "Añadir Película",
+            listaGeneros: generos
+        });
+    })
 });
 
 /*
 * index de películas por POST. Crea una película
 */
 ruta.post('/', verificarUsuario, (req, res) => {
+    console.log(req.body);
+    console.log(req.files);
     let resultado = peli.crearPelicula(req.body, req.files);
     resultado.then(peliculas => {
-        res.json({
-            status: true
+        let generos = genero.getGeneros();
+        generos.then(generos => {
+            res.render("\peliculas\\add.ejs", { 
+                titulo: "Añadir Película",
+                listaGeneros: generos
+            });
         })
     }).catch(err => {
         res.status(400).json({
@@ -100,7 +110,6 @@ ruta.get('/ver/pelicula/:id', verificarUsuario, (req, res) => {
 
 //GET de editar una película
 ruta.get('/editar/pelicula/:id', verificarUsuario, (req, res) => {
-    console.log("editarPeli");
     let resultado = peli.verPelicula(req.params.id);
     resultado.then(pelicula => {
         let generosPelicula = pelicula.etiquetas;
