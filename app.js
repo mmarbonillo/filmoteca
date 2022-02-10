@@ -6,8 +6,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 
-var util= require('util');
-var encoder = new util.TextEncoder('utf-8');
+global.TextEncoder = require("util").TextEncoder;
 
 
 
