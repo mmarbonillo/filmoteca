@@ -65,8 +65,8 @@ En todas nuestras páginas podremos ver arriba a la derecha esta imagen:
 Esta página nos mostrará nuestro nombre de usuario y nuestro email. Desde aquí podremos modificar los datos de nuestro usuario, modificar nuestra contraseña o cerrar la sesión
 ![panel](resources/img/readme/panel.PNG "Panel de Usuario")
 
-El botón de "modificar datos" nos lleva a un pequeño formulario desde el cual podremos cambiar nuestro nombre de usuario y nuestro email
+El botón de "modificar datos" nos lleva a un pequeño formulario desde el cual podremos cambiar nuestro nombre de usuario y nuestro email  
 ![modificarDatos](resources/img/readme/modificarDatos.PNG "Modificar datos de Usuario")
 
-Por otro lado, el botón de "Modificar Contraseña" nos lleva a otro pequeño formulario para poder modificar la contraseña de nuestro usuario
+Por otro lado, el botón de "Modificar Contraseña" nos lleva a otro pequeño formulario para poder modificar la contraseña de nuestro usuario  
 ![cambiarPass](resources/img/readme/cambiarPass.PNG "Modificar Contraseña")
