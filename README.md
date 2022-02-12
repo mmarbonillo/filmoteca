@@ -59,7 +59,7 @@ Si pinchamos sobre cualquier género, podremos ver una lista de todas las pelíc
 
 ### Panel de Usuario
 
-En todas nuestras páginas podremos ver arriba a la derecha esta imagen:
+En todas nuestras páginas podremos ver arriba a la derecha esta imagen:  
 ![accesoPanel](resources/img/readme/accesoPanel.PNG "Acceso al Panel de Usuario")
 
 Esta página nos mostrará nuestro nombre de usuario y nuestro email. Desde aquí podremos modificar los datos de nuestro usuario, modificar nuestra contraseña o cerrar la sesión
