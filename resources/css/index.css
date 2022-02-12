@@ -27,3 +27,9 @@ button.round {
 #content{
     height: 103em;
 }
+
+.menuPaginar{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}

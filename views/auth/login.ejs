@@ -6,13 +6,13 @@
   <body>
 
     <div class="centerH">
-        <div id="content" class="col70 bblack">
+        <div id="content" class="col70">
 <!--------------------------------- CABECERA ------------------------------>
             <%- include('../plantillas/header'); %>
 <!--------------------------------- CUERPO -------------------------------->
-            <div id="body" class="col100">
+            <div id="body" class="col100 centerH">
     <!--------------------------------- MENÚ ---------------------------------->
-                <%- include('../plantillas/menu'); %>
+                
     <!--------------------------------- CONTENIDO ----------------------------->
                 <div id="content" class="col70">
                     <div id="options" class="col100">
@@ -24,7 +24,7 @@
                                 <label for="passwordLogin" class="col100 mMarginTop">Contraseña</label>
                                 <input id="passwordLogin" type="password" name="passwordLogin" class="col100 mMarginLeft" required><br><br>
                             </div>
-                            <div class="col100">
+                            <div class="col100 mMarginTop">
                                 <input class="clear" type="button" value="Iniciar sesión" onclick="comprobarUsuario()">
                             </div>
                         </div>
@@ -44,7 +44,9 @@
 
                                 <button id="submitAñadir" type="submit" class="clear hidden">Enviar</button>
                             </form>
-                            <input class="clear" type="button" value="Enviar" onclick="comprobarUsuarioNuevo()">
+                            <div class="col100 sMarginTop">
+                                <input class="clear" type="button" value="Enviar" onclick="comprobarUsuarioNuevo()">
+                            </div>
                         </div>
                     </div>
                 </div>

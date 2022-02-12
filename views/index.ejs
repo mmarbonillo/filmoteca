@@ -7,7 +7,7 @@
   <body>
 
     <div class="centerH">
-        <div id="content" class="col70 bblack">
+        <div id="content" class="col70">
 <!--------------------------------- CABECERA ------------------------------>
             <%- include('plantillas/header'); %>
 <!--------------------------------- CUERPO -------------------------------->
@@ -43,10 +43,10 @@
                         <% }); %>
                     </div>
                     <div class="col100">
-                        <p id="pagPrimera" class="col5" onclick="$(location).attr('href', ('/api/peliculas/'));" >Inicio</p>
-                        <p id="pagAnterior" class="col8 sMarginLeft" onclick="anterior()" >Anterior</p>
-                        <p id="pagSigiente" class="col8" onclick="siguiente()" >Siguiente</p>
-                        <p id="pagUltima" class="col8" onclick="pagFinal()" >Final</p>
+                        <p id="pagPrimera" class="col5 menuPaginar" onclick="$(location).attr('href', ('/api/peliculas/'));" >Inicio</p>
+                        <p id="pagAnterior" class="col8 sMarginLeft menuPaginar" onclick="anterior()" >Anterior</p>
+                        <p id="pagSigiente" class="col8 menuPaginar" onclick="siguiente()" >Siguiente</p>
+                        <p id="pagUltima" class="col8 menuPaginar" onclick="pagFinal()" >Final</p>
                     </div>
                 </div>
                 <div id="btnNewform" class="col8 right xlMarginTop">

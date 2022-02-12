@@ -6,7 +6,7 @@
   <body>
 
     <div class="centerH">
-        <div id="content" class="col70 bblack">
+        <div id="content" class="col70">
 <!--------------------------------- CABECERA ------------------------------>
             <%- include('../plantillas/header'); %>
 <!--------------------------------- CUERPO -------------------------------->
@@ -32,13 +32,13 @@
                                     <input type="hidden" name="valorValoracion" value="<%=pelicula.valoracion%>">
                                 </div>
                             </div>
-                            <div class="col40 right bblack">
+                            <div class="col40 right">
                                 <img src="/img/peliculas/<%= pelicula.imagen %>" alt="" class=" jpgPelicula col100">
                                 <input type="hidden" name="imagenActual" value="<%= pelicula.imagen %>">
                                 <div class="col100">
                                     <input id="imagen" type="file" name="imagen" class="col90 mMarginLeft mMarginTop">
                                 </div>
-                                <div class="col200">
+                                <div class="col100 mMarginTop mMarginLeft">
                                     <button type="submit">GUARDAR</button>
                                 </div>
                             </div>

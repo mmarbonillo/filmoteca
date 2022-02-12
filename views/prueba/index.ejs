@@ -7,7 +7,7 @@
     <body>
   
       <div class="centerH">
-          <div id="content" class="col70 bblack">
+          <div id="content" class="col70">
   <!--------------------------------- CABECERA ------------------------------>
               <%- include('../plantillas/header'); %>
   <!--------------------------------- CUERPO -------------------------------->
@@ -24,6 +24,7 @@
                           <p><%= usuario.email %></p>
                           <input type="button" onclick="$(location).attr('href', '/api/usuarios/editar/<%= usuario._id %>')" value="Modificar datos">
                           <input type="button" onclick="$(location).attr('href', '/api/usuarios/modificarPass/<%= usuario._id %>')" value="Modificar Contraseña">
+                          <input type="button" onclick="cerrarSesion()" value="Cerrar sesión">
                       </div>
                   </div>
                   
@@ -33,3 +34,10 @@
       </div>
     </body>
   </html>
+
+  <script>
+    function cerrarSesion(){
+      document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+      $(location).attr('href', '/');
+    }
+  </script>
