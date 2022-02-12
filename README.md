@@ -48,7 +48,7 @@ Para eliminar una película, simplemente le damos al botón de eliminar y se nos
 
 ### Medias de puntuación según los géneros
 
-Si nos fijamos en el pequeño menú de la izquierda podemos ver que, a la izquierda de "películas", tenemos una flecha sobre la que, si hacemos click, se nos abrirá otra opción del menú
+Si nos fijamos en el pequeño menú de la izquierda podemos ver que, a la izquierda de "películas", tenemos una flecha sobre la que, si hacemos click, se nos abrirá otra opción del menú  
 ![menuPeliculas](resources/img/readme/menu.PNG "menu")
 
 Al hacer click vemos una página muy sencilla en la que podremos ver todos los géneros de películas que hay en nuestra aplicación y la media de puntuación de sus películas
