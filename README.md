@@ -10,7 +10,7 @@ Esta es una aplicación sencilla con la que poder gestionar peliculas de las cua
 
 Para poder realizar todo esto será necesario tener una base de datos en MongoDB llamada "Filmoteca" con los datos que encontraremos en la carpeta "documentos" de nuestra estructura. En esta carpeta se encuentran datos sobre las películas, los géneros de las mismas y los usuarios. 
 
-### Login y registro de usuarios
+## Login y registro de usuarios
 
 Lo primero que tendremos que hacer será acceder a la aplicación desde el puerto 3000 y veremos esta página:
 ![login](resources/img/readme/login.PNG "Login")
@@ -26,14 +26,14 @@ Como vemos tenemos dos formularios; uno a la izquierda para logearnos en caso de
 Una vez hayamos entrado con nuestro usuario podremos ver nuestro index desde el cual podremos ver nuestras películas mostradas de 6 en 6.
 ![index](resources/img/readme/index.PNG "index")
 
-### Añadir una película
+## Añadir una película
 
 Si hacemos click sobre el botón verde que vemos a la derecha se nos habrirá un formulario con el que podremos añadir películas a la aplicación
 ![addPelicula](resources/img/readme/formularioAddPelicula.PNG "Añadir Película")
 
 Para volver a nuestro index hacemos click sobre la palabra "Películas" de nuestro menú situado a la izquierda de la pantalla.
 
-### Editar una película
+## Editar una película
 
 Desde el index hacemos click en cualquier película podremos ver toda su información así como dos botones: editar y eliminar
 ![verPelicula](resources/img/readme/verPelicula.PNG "Ver Película")
@@ -41,12 +41,12 @@ Desde el index hacemos click en cualquier película podremos ver toda su informa
 Si hacemos click sobre el botón de editar podremos ver un formulario con los datos de la película ya disponibles para modificarse
 ![editarPelicula](resources/img/readme/editarPelicula.PNG "Editar Película")
 
-### Eliminar una película
+## Eliminar una película
 
 Para eliminar una película, simplemente le damos al botón de eliminar y se nos pedirá una confirmación para ello
 ![eliminarPelicula](resources/img/readme/confirmar.PNG "Eliminar Película")
 
-### Medias de puntuación según los géneros
+## Medias de puntuación según los géneros
 
 Si nos fijamos en el pequeño menú de la izquierda podemos ver que, a la izquierda de "películas", tenemos una flecha sobre la que, si hacemos click, se nos abrirá otra opción del menú  
 ![menuPeliculas](resources/img/readme/menu.PNG "menu")
@@ -57,7 +57,7 @@ Al hacer click vemos una página muy sencilla en la que podremos ver todos los g
 Si pinchamos sobre cualquier género, podremos ver una lista de todas las películas que sean de ese género. Hacemos click sobre "Cómic", por ejemplo:
 ![comic](resources/img/readme/comic.PNG "Películas de género 'Cómic'")
 
-### Panel de Usuario
+## Panel de Usuario
 
 En todas nuestras páginas podremos ver arriba a la derecha esta imagen:  
 ![accesoPanel](resources/img/readme/accesoPanel.PNG "Acceso al Panel de Usuario")
